@@ -11,10 +11,10 @@ import {
 export const Navbar = () => {
   return(
   <div>
-    <header className="relative z-10 mt-2">
+    <header className="top-0 z-10 mt-2 sticky w-full">
       <nav>
         <div className="mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-20 my-2">
-          <div className="flex">
+          <div className="sm:flex hidden">
             <select className="cursor-pointer border-none text-sm text-black">
               <option value="english" selected>
                 English
@@ -58,10 +58,10 @@ export const Navbar = () => {
 
         {/* Secondary navigation */}
         <div className="border-t-2 border-gray-100 border-b-2 ">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0  ">
             <div>
-              <div className="flex h-16 items-center justify-between">
-                <div className="hidden lg:flex lg:flex-1 lg:items-center">
+              <div className="flex h-16 items-center justify-between ">
+                <div className="flex flex-1 items-center">
                   <a href="#">
                     <span className="sr-only">Your Company</span>
                     <Image
@@ -72,7 +72,7 @@ export const Navbar = () => {
                     />
                   </a>
                 </div>
-                <div>
+                <div className="hidden sm:block ">
                   <a href="#" className="mr-4 hover:text-red-500">
                     HOME
                   </a>

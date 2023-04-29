@@ -48,7 +48,7 @@ export const Footer = () => {
                   </ul>
                 </div>
               </div>
-              <div className="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
+              <div className="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 ">
                 <div>
                   <h3 className="text-sm font-medium text-white">
                     Useful Links
@@ -125,7 +125,7 @@ export const Footer = () => {
             <p className="text-sm text-gray-400">
               Copyright &copy; 2023 . Built with by Maha Ahmad
             </p>
-            <div className="flex">
+            <div className="sm:flex hidden ">
               <Image
                 className="mr-2"
                 src="/assets/image/express.png"
