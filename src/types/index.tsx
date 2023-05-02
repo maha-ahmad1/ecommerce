@@ -1,6 +1,11 @@
+export interface ImageProps {
+  src: string;
+  alt: string;
 
+}
 
 export interface SliderProps {
+    images:ImageProps[]
     spaceBetween?: number;
     slidesPerView?: number;
     navigation?: boolean;
