@@ -9,7 +9,7 @@ import { footerNavigation } from 'layouts/data';
 export const Footer = () => {
   return (
 <>
-<footer className="bg-[#202325]	mt-16">
+<footer className="bg-[#202325]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="py-20 xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="grid grid-cols-2 gap-8 xl:col-span-2">

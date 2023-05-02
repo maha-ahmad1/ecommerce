@@ -1,14 +1,12 @@
 import React from 'react'
+import Slider from 'components/Slider';
+import {images} from 'data'
 
 export const Home = () => {
   return (
     <div>
-      <div className=" bg-slate-600 h-[200px]"> maha</div>
-      <div className=" bg-slate-600 h-[200px]"> maha</div>
-      <div className=" bg-slate-600 h-[200px]"> maha</div>
-      <div className=" bg-slate-600 h-[200px]"> maha</div>
-      <div className=" bg-slate-600 h-[200px]"> maha</div>
-      <div className=" bg-slate-600 h-[200px]"> maha</div>
+      <Slider images={images} />
+      <div className='h-20 '>maha</div>
     </div>
   )
 }
