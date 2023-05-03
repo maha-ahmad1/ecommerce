@@ -27,22 +27,37 @@ const Slider = ({
         slidesPerView={slidesPerView}
         navigation={navigation}
         pagination={{ clickable: true, ...(pagination && {}) }}
-        scrollbar={{ draggable: true, ...(scrollbar && {}) }}
+        scrollbar={scrollbar}
         onSwiper={onSwiper}
         onSlideChange={onSlideChange}
+        a11y={{ enabled: true }}
+
       >
         {images.map((image, index) => (
-          <SwiperSlide key={index}>
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={1000}
-              height={1000}
-              className="w-full h-screen"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-40 text-white p-4">
-              <h2 className="text-lg font-bold">Slider Title</h2>
-              <p className="text-sm">Slider subtitle or description</p>
+          <SwiperSlide
+            key={index}
+            className="relative h-screen   "
+          >
+            <div className="">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={1000}
+                height={1000}
+                className="w-full h-screen "
+              />
+               <div className="overlay"></div>
+              <div className="flex flex-col items-center justify-center h-full w-full text-center z-20">
+                {image?.content && (
+                  <p className="text-3xl">{image?.content}</p>
+                )}
+                {image?.heading && (
+                  <p className="text-3xl">{image?.heading}</p>
+                )}
+                {image?.paragraph && (
+                  <p className="text-3xl">{image?.paragraph}</p>
+                )}
+              </div>
             </div>
           </SwiperSlide>
         ))}
