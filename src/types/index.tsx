@@ -18,3 +18,10 @@ export interface SliderProps {
     onSlideChange?: () => void;
     autoplay:any
   }
+
+export interface TypeButton {
+  children:any;
+  className:any;
+  type:any
+  loading:any
+}

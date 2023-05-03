@@ -1,8 +1,21 @@
-import React from 'react'
+import React from "react";
+import { TypeButton } from "types";
 
-export const Button = () => {
-  return (
-    <div>index</div>
-  )
-}
+export const Button = ({
+  children,
+  className,
+  type = "button",
+  loading = false,
+  ...rest
+}:TypeButton) => {
+    return (
+        <button
+          className={className}
+          type={type}
+          {...rest}
+        >
+          {loading ? "Loading.." : children}
+        </button>
+      );
+};
 export default Button;
