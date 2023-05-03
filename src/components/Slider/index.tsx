@@ -1,5 +1,5 @@
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Navigation, Pagination, Scrollbar, A11y,Autoplay } from "swiper";
 import { SliderProps } from "types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import React, { useRef, useState } from 'react';
 
 const Slider = ({
   images,
@@ -19,10 +20,22 @@ const Slider = ({
   onSwiper,
   onSlideChange,
 }: SliderProps) => {
+  const progressCircle = useRef(null);
+const progressContent = useRef(null);
+
+const onAutoplayTimeLeft = (s, time, progress) => {
+  if (progressCircle.current) {
+    progressCircle.current.style.setProperty("--progress", 1 - progress);
+  }
+  if (progressContent.current) {
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  }
+};
+
   return (
     <>
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
         spaceBetween={spaceBetween}
         slidesPerView={slidesPerView}
         navigation={navigation}
@@ -31,7 +44,12 @@ const Slider = ({
         onSwiper={onSwiper}
         onSlideChange={onSlideChange}
         a11y={{ enabled: true }}
-
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        onAutoplayTimeLeft={onAutoplayTimeLeft}
       >
         {images.map((image, index) => (
           <SwiperSlide

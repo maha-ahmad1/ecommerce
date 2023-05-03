@@ -16,5 +16,5 @@ export interface SliderProps {
     scrollbar?: boolean;
     onSwiper?: (swiper: any) => void;
     onSlideChange?: () => void;
-    Autoplay:any
+    autoplay:any
   }
