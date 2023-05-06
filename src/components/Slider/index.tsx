@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 
 const Slider = ({
   images,
@@ -17,8 +17,10 @@ const Slider = ({
   navigation = true,
   pagination = true,
   scrollbar = true,
+  autoplay = true,
   onSwiper,
   onSlideChange,
+  ...rest
 }: SliderProps) => {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -52,25 +54,23 @@ const Slider = ({
         onAutoplayTimeLeft={onAutoplayTimeLeft}
       >
         {images.map((image, index) => (
-          <SwiperSlide key={index} className="relative h-screen   ">
-            <div className="">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={1000}
-                height={1000}
-                className="w-full h-screen "
-              />
-              <div className="overlay"></div>
-              <div className="flex flex-col items-center justify-center h-full w-full text-center z-20">
-                {image?.content && <p className="text-3xl">{image?.content}</p>}
-                {image?.heading && <p className="text-3xl">{image?.heading}</p>}
-                {image?.paragraph && (
-                  <p className="text-3xl">{image?.paragraph}</p>
-                )}
-              </div>
-            </div>
-          </SwiperSlide>
+    <SwiperSlide key={index} className="relative h-screen">
+    <div className="relative">
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={1000}
+        height={1000}
+        className="w-full h-screen"
+      />
+      <div className="absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 ">
+        {image?.heading && <p className="text-1xl font-bold">{image?.heading}</p>}
+        {image?.paragraph && <p className="text-4xl font-bold mt-4 ">{image?.paragraph}</p>}
+        {image?.content && <p className="text-md text-gray-500 w-26 mt-4">{image?.content}</p>}
+      </div>
+    </div>
+  </SwiperSlide>
+  
         ))}
       </Swiper>
     </>
