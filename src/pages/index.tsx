@@ -4,16 +4,81 @@ import {images} from 'data'
 import Card from 'components/Card'
 
 export const Home = () => {
+  const cardsData = [
+    {
+      id: 1,
+      imageSrc: "/assets/image/1.jpg",
+      title: "Card 1 Title",
+      price: "Card 1 description.",
+      link: "#",
+      linkText: "Read more",
+      stars:"1",
+      imageAlt:"img"
+    },
+    {
+      id: 2,
+      imageSrc: "/assets/image/2.jpg",
+      title: "Card 2 Title",
+      price: "Card 2 description.",
+      link: "#",
+      linkText: "Read more",
+      stars:"1"
+      ,
+      imageAlt:"img"
+    },
+    {
+      id: 3,
+      imageSrc: "/assets/image/3.jpg",
+      title: "Card 3 Title",
+      price: "Card 3 description.",
+      link: "#",
+      linkText: "Read more",
+      stars:"1"
+      ,
+      imageAlt:"img"
+    },
+    {
+      id: 4,
+      imageSrc: "/assets/image/3.jpg",
+      title: "Card 3 Title",
+      price: "Card 3 description.",
+      link: "#",
+      linkText: "Read more",
+      stars:"1",
+      imageAlt:"img"
+
+    },
+    {
+      id: 4,
+      imageSrc: "/assets/image/3.jpg",
+      title: "Card 3 Title",
+      price: "Card 3 description.",
+      link: "#",
+      linkText: "Read more",
+      stars:"1",
+      imageAlt:"img"
+
+    }
+    
+  ];
   return (
     <div>
       <Slider images={images} navigation={false} scrollbar={false} autoplay={false}/>
-      <Card
-        imageSrc="/assets/image/3.jpg"
-        title="Noteworthy technology acquisitions 2021"
-        description="Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
-        link="#"
-        linkText="Read more"
-      />
+      <div className='flex flex-row'>
+      {cardsData.map((card) => (
+        <Card
+          key={card.id}
+          imageSrc={card.imageSrc}
+          title={card.title}
+          price={card.price}
+          link={card.link}
+          linkText={card.linkText}
+          stars={card.stars}
+          imageAlt={card.imageAlt}
+
+        />
+      ))}
+    </div>
 
     </div>
   )

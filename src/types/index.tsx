@@ -1,3 +1,6 @@
+import { Swiper } from 'swiper';
+
+
 export interface ImageProps {
   src: string;
   alt: string;
@@ -24,4 +27,24 @@ export interface TypeButton {
   className:any;
   type:any
   loading:any
+}
+
+export type OnAutoplayTimeLeftArgs = {
+  s: Swiper;
+  time: number;
+  style: {setProperty: (name: string, value: string) => void};
+  textContent: string;
+  progressCircle: React.RefObject<HTMLDivElement>;
+  progressContent: React.RefObject<HTMLDivElement>;
+  progress:number
+};
+
+export type Card={
+  imageSrc:string,
+  title:string,
+  price:string,
+  link:string,
+  stars:any,
+  linkText:any
+  imageAlt:string
 }
