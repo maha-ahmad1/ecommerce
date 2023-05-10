@@ -7,7 +7,7 @@ export const Home = () => {
   const cardsData = [
     {
       id: 1,
-      imageSrc: "/assets/image/1.jpg",
+      imageSrc: "/assets/image/product1.jpg",
       title: "Card 1 Title",
       price: "Card 1 description.",
       link: "#",
@@ -17,7 +17,7 @@ export const Home = () => {
     },
     {
       id: 2,
-      imageSrc: "/assets/image/2.jpg",
+      imageSrc: "/assets/image/product1.jpg",
       title: "Card 2 Title",
       price: "Card 2 description.",
       link: "#",
@@ -28,7 +28,7 @@ export const Home = () => {
     },
     {
       id: 3,
-      imageSrc: "/assets/image/3.jpg",
+      imageSrc: "/assets/image/product1.jpg",
       title: "Card 3 Title",
       price: "Card 3 description.",
       link: "#",
@@ -39,18 +39,7 @@ export const Home = () => {
     },
     {
       id: 4,
-      imageSrc: "/assets/image/3.jpg",
-      title: "Card 3 Title",
-      price: "Card 3 description.",
-      link: "#",
-      linkText: "Read more",
-      stars:"1",
-      imageAlt:"img"
-
-    },
-    {
-      id: 4,
-      imageSrc: "/assets/image/3.jpg",
+      imageSrc: "/assets/image/product1.jpg",
       title: "Card 3 Title",
       price: "Card 3 description.",
       link: "#",
@@ -64,7 +53,7 @@ export const Home = () => {
   return (
     <div>
       <Slider images={images} navigation={false} scrollbar={false} autoplay={false}/>
-      <div className='flex flex-row'>
+      <div className='flex flex-row m-20 '>
       {cardsData.map((card) => (
         <Card
           key={card.id}
@@ -76,11 +65,13 @@ export const Home = () => {
           stars={card.stars}
           imageAlt={card.imageAlt}
 
+
         />
       ))}
     </div>
-
     </div>
   )
 }
 export default Home;
+//By passing this data down to the Card
+//by defining props on the child component. The child component can then access the data by using the props passed to it.

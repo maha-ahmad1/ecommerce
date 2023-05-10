@@ -45,6 +45,7 @@ export type Card={
   price:string,
   link:string,
   stars:any,
-  linkText:any
-  imageAlt:string
+  linkText:any,
+  imageAlt:string,
+  
 }
