@@ -39,7 +39,7 @@ export type OnAutoplayTimeLeftArgs = {
   progress:number
 };
 
-export type Card={
+export type CardType ={
   imageSrc:string,
   title:string,
   price:string,
@@ -47,5 +47,6 @@ export type Card={
   stars:any,
   linkText:any,
   imageAlt:string,
+  offer:string
   
 }
