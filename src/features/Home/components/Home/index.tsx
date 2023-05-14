@@ -7,8 +7,7 @@ export const Home = () => {
   const cardsData = [
     {
       id: 1,
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      imageSrc: "/assets/image/product1.jpg",
       title: "Card 1 Title",
       price: "$162.00",
       link: "#",
@@ -19,8 +18,7 @@ export const Home = () => {
     },
     {
       id: 2,
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      imageSrc: "/assets/image/product1.jpg",
       title: "Card 2 Title",
       price: "$162.00",
       link: "#",
@@ -31,8 +29,7 @@ export const Home = () => {
     },
     {
       id: 3,
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      imageSrc: "/assets/image/product1.jpg",
       title: "Lorem ipsum furniture two",
       price: "$162.00",
       link: "#",
@@ -43,8 +40,7 @@ export const Home = () => {
     },
     {
       id: 4,
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      imageSrc: "/assets/image/product1.jpg",
       title: "Lorem ipsum furniture two",
       price: "$162.00",
       link: "#",
@@ -54,9 +50,8 @@ export const Home = () => {
       offer: "$100.00",
     },
     {
-      id: 4,
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      id: 5,
+      imageSrc: "/assets/image/product1.jpg",
       title: "Lorem ipsum furniture two",
       price: "$162.00",
       link: "#",
@@ -66,9 +61,8 @@ export const Home = () => {
       offer: "$100.00",
     },
     {
-      id: 4,
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      id: 6,
+      imageSrc: "/assets/image/product1.jpg",
       title: "Lorem ipsum furniture two",
       price: "$162.00",
       link: "#",
@@ -76,7 +70,6 @@ export const Home = () => {
       stars: "1",
       imageAlt: "img",
       offer: "$100.00",
-      maha:"maha"
     },
   ];
 
@@ -89,7 +82,9 @@ export const Home = () => {
         autoplay={false}
       />
       <div className="justify-center flex mb-10">
-        <p className=" pt-20 pb-4 text-3xl font-bold border-b-red-500 border-b-2 ">Exclusive Products</p>
+        <p className=" pt-20 pb-4 text-3xl font-bold border-b-red-500 border-b-2 ">
+          Exclusive Products
+        </p>
       </div>
       <div className="my-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-16 md:px-24 ">
         {cardsData.map((card) => (

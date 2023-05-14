@@ -17,10 +17,12 @@ export const card = ({
       <div className="mx-auto max-w-2xl pb-4 sm:px-6 sm:pt-0 lg:max-w-7xl lg:px-0 border border-gray-200 rounded-lg shadow">
         <div className="group relative hover:bg-gray-300 hover:rounded-t-md ">
           <div className="min-h-80 w-full overflow-hidden rounded-t-md lg:aspect-none group-hover:opacity-50 lg:h-80 ">
-            <img
+            <Image
               src={imageSrc}
               alt={imageAlt}
               className="h-full w-full object-cover object-center sm:h-full sm:w-full"
+              width={100}
+              height={100}
             />
           </div>
           </div>
