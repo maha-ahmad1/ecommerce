@@ -108,9 +108,9 @@ export const Footer = () => {
                         stroke="currentColor"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M9 21h6m3-3V8a5 5 0 00-5-5H8a5 5 0 00-5 5v10a5 5 0 005 5h10a5 5 0 005-5v-3z"
                         />
                       </svg>

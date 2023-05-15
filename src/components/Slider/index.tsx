@@ -61,6 +61,7 @@ const Slider = ({
         alt={image.alt}
         width={1000}
         height={1000}
+        priority={true}
         className="w-full h-screen"
       />
       <div className="absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 ">

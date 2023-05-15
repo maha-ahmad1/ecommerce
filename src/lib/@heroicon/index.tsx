@@ -6,6 +6,17 @@ import {
   MagnifyingGlassIcon as Searchicon,
   UserIcon as UserIcon,
   HeartIcon as HeartIcon,
-  ArrowPathIcon as Compare
+  ArrowPathIcon as Compare,
 } from "@heroicons/react/24/outline";
-export { Phoneicon, Carticon, MapPinIcon ,EnvelopeOpenIcon,Searchicon ,UserIcon,HeartIcon,Compare };
+import { StarIcon as Star } from "@heroicons/react/24/solid";
+export {
+  Phoneicon,
+  Carticon,
+  MapPinIcon,
+  EnvelopeOpenIcon,
+  Searchicon,
+  UserIcon,
+  HeartIcon,
+  Compare,
+  Star,
+};

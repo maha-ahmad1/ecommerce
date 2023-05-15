@@ -10,9 +10,14 @@ import {
 import { useState } from "react";
 
 export const Navbar = () => {
-  const [selectedValue, setSelectedValue] = useState("option1");
+  const [selectedValue, setSelectedValue] = useState("English");
+  const [option, setOption] = useState("USD");
+
   const handleChange = (event: any) => {
     setSelectedValue(event.target.value);
+  };
+  const handleSelect = (event: any) => {
+    setOption(event.target.value);
   };
 
   return (
@@ -21,16 +26,22 @@ export const Navbar = () => {
         <nav>
           <div className="mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-20 my-2">
             <div className="sm:flex hidden">
-              <select value={selectedValue} onChange={handleChange} className="cursor-pointer border-none text-sm text-black">
-                <option value="option1" selected>
-                  English
-                </option>
-                <option value="option2">Arabic</option>
+              <select
+                value={selectedValue}
+                onChange={handleChange}
+                className="cursor-pointer border-none text-sm text-black"
+              >
+                <option value="English">English</option>
+                <option value="Arabic">Arabic</option>
               </select>
-              <select value={selectedValue} onChange={handleChange} className="cursor-pointer border-none	text-sm text-black">
-                <option value="option1">USD </option>
-                <option value="option2">GBR</option>
-                <option value="option3">EUR</option>
+              <select
+                value={option}
+                onChange={handleSelect}
+                className="cursor-pointer border-none	text-sm text-black"
+              >
+                <option value="USD">USD </option>
+                <option value="GBR">GBR</option>
+                <option value="GBR">EUR</option>
               </select>
               <div>
                 <div className="flex items-center mt-2">
@@ -69,12 +80,12 @@ export const Navbar = () => {
                 <div className="flex h-16 items-center justify-between ">
                   <div className="flex flex-1 items-center">
                     <a href="#">
-                      <span className="sr-only">Your Company</span>
                       <Image
                         src="/assets/image/logo.png"
                         width={120}
                         alt="logo"
                         height={100}
+                        priority={true}
                       />
                     </a>
                   </div>
