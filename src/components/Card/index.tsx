@@ -1,16 +1,13 @@
 import React from "react";
 import { CardType } from "types";
-import Image from "next/image";
 import Stars from "components/Stars";
+import Image from "components/Image";
 
 export const card = ({
-  imageSrc,
+  image,
   title,
   price,
-  link,
   stars,
-  linkText,
-  imageAlt,
   offer,
   ...rest
 }: CardType) => {
@@ -22,19 +19,19 @@ export const card = ({
         <div className="group relative hover:bg-gray-300 hover:rounded-t-md ">
           <div className="min-h-80 w-full overflow-hidden rounded-t-md lg:aspect-none group-hover:opacity-50 lg:h-80 ">
             <Image
-              src={imageSrc}
-              alt={imageAlt}
+              src={image}
+              alt={"image"}
               className="h-full w-full object-cover object-center sm:h-full sm:w-full"
               width={100}
               height={100}
-              priority={true} // Add the priority property
+              priority={true} 
             />
           </div>
         </div>
         <div className="mt-2 flex flex-col items-center">
           <div>
             <h3 className="text-md font-medium text-gray-900 ">
-              <a href={link}>
+              <a href="#">
                 <span aria-hidden="true" className="absolute inset-0" />
                 {title}
               </a>
@@ -52,14 +49,15 @@ export const card = ({
               </span>
             </div>
           </div>
+          <div>
+      </div>
           <div className="flex">
-            {star.map((i, index) => (
-              <Stars
-                key={i}
-                className="w-4 h-4"
-              />
-            ))}
+              <Stars className="w-4 h-4" selected={stars}  />
           </div>
+          {console.log(stars)}
+          {/* <div className="flex w-4 h-4">
+             selected={stars}
+          </div> */}
         </div>
       </div>
     </div>

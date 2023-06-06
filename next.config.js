@@ -10,3 +10,8 @@ module.exports = {
     ignoreBuildErrors: true,
   },
 };
+module.exports = {
+  images: {
+    domains: ['fakestoreapi.com'],
+  },
+};

@@ -40,13 +40,10 @@ export type OnAutoplayTimeLeftArgs = {
 };
 
 export type CardType ={
-  imageSrc:string,
+  image:string,
   title:string,
   price:string,
-  link:string,
   stars:any,
-  linkText:any,
-  imageAlt:string,
   offer:string
   
 }
