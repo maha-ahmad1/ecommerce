@@ -1,11 +1,10 @@
 import React from "react";
-import Home from "features/Home/components/Home";
-
+import { Profile } from "features/components/Profile";
 export const Page = () => {
   return (
     <div>
-      <Home />
+    <Profile />
     </div>
   );
 };
-export default Home;
+export default Page;

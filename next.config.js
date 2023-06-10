@@ -12,6 +12,7 @@ module.exports = {
 };
 module.exports = {
   images: {
-    domains: ['fakestoreapi.com'],
+    domains: ['images.unsplash.com'],
   },
 };
+
