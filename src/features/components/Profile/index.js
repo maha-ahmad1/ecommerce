@@ -11,8 +11,6 @@ export const Profile = () => {
     return <p>Error occurred while fetching items.</p>;
   }
 
-  console.log("maha " + items);
-
   return (
     <div>
       <div className="flex justify-center items-center h-full">
@@ -41,7 +39,7 @@ export const Profile = () => {
               </div>
             </div>
 
-            <div className="md:p-4 text-black bg-gray-200">
+            <div className="md:p-4 text-black bg-gray-200  rounded-b-lg">
               <div className="flex flex-col items-center justify-between sm:flex-row sm:text-center pb-8">
                 <div className="flex sm:ml-4 sm:mt-6 mt-20 ">
                   <button className="border rounded-md border-gray-500 outline-none h-10  w-40 hover:bg-blue-600 hover:text-white text-center">
@@ -54,17 +52,17 @@ export const Profile = () => {
 
                 <div className="flex mt-2">
                   <div>
-                    <p className="mb-1 md:text-2xl font-bold">{items.likes}</p>
+                    <p className="mb-1 md:text-2xl font-bold text-center">{items.likes}</p>
                     <p className="md:text-lg mb-0">Likes</p>
                   </div>
                   <div className="px-3">
-                    <p className="mb-1 md:text-2xl font-bold">
+                    <p className="mb-1 md:text-2xl font-bold text-center">
                       {items.followers}
                     </p>
                     <p className="md:text-lg mb-0">Followers</p>
                   </div>
                   <div>
-                    <p className="mb-1 md:text-2xl font-bold">{items.follow}</p>
+                    <p className="mb-1 md:text-2xl font-bold text-center">{items.follow}</p>
                     <p className="md:text-lg mb-0">Following</p>
                   </div>
                 </div>
