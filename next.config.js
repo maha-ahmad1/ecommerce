@@ -12,7 +12,6 @@ module.exports = {
 };
 module.exports = {
   images: {
-    domains: ['images.unsplash.com'],
+    domains: ['cdn-icons-png.flaticon.com', 'upload.wikimedia.org'],
   },
 };
-

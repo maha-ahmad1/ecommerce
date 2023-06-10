@@ -2,17 +2,17 @@ import React from "react";
 import Image from "next/image";
 import useProfile from "features/hooks/useProfile";
 export const Profile = () => {
-    const { items, isLoading, isError } = useProfile();
-    if (isLoading) {
-      return <p>Loading...</p>;
-    }
-  
-    if (isError) {
-      return <p>Error occurred while fetching items.</p>;
-    }
-  
-  console.log("maha " + items)
-  
+  const { items, isLoading, isError } = useProfile();
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (isError) {
+    return <p>Error occurred while fetching items.</p>;
+  }
+
+  console.log("maha " + items);
+
   return (
     <div>
       <div className="flex justify-center items-center h-full">
@@ -27,14 +27,16 @@ export const Profile = () => {
               }}
             >
               <div className="ms-8 flex flex-col w-48">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
-                  alt="Generic placeholder image"
+                <Image
+                  width={200}
+                  height={200}
+                  src={items.photo}
+                  alt="Profile"
                   className="mt-4 mb-2 border border-gray-300 bg-white rounded-lg p-2 transform translate-y-24"
                 />
               </div>
               <div className="ml-60 text-lg font-bold ">
-                <h5 className="text-white">Maha Ahamd</h5>
+                <h5 className="text-white">{items.name}</h5>
                 <p className="text-white">Gaza</p>
               </div>
             </div>
@@ -52,15 +54,17 @@ export const Profile = () => {
 
                 <div className="flex mt-2">
                   <div>
-                    <p className="mb-1 md:text-2xl font-bold">253</p>
-                    <p className="md:text-lg mb-0">Photos</p>
+                    <p className="mb-1 md:text-2xl font-bold">{items.likes}</p>
+                    <p className="md:text-lg mb-0">Likes</p>
                   </div>
                   <div className="px-3">
-                    <p className="mb-1 md:text-2xl font-bold">1026</p>
+                    <p className="mb-1 md:text-2xl font-bold">
+                      {items.followers}
+                    </p>
                     <p className="md:text-lg mb-0">Followers</p>
                   </div>
                   <div>
-                    <p className="mb-1 md:text-2xl font-bold">478</p>
+                    <p className="mb-1 md:text-2xl font-bold">{items.follow}</p>
                     <p className="md:text-lg mb-0">Following</p>
                   </div>
                 </div>
@@ -84,37 +88,17 @@ export const Profile = () => {
                   </a>
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-2">
-                <div className="mb-2">
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
-                    alt="image 1"
-                    className="w-full rounded-md"
+              <div className="grid grid-cols-2 gap-2 ">
+                {items.images_list.map((image, index) => (
+                  <Image
+                    src={image}
+                    alt={`Image ${index + 1}`}
+                    key={index}
+                    width={600}
+                    height={600}
+                    className="rounded-lg"
                   />
-                </div>
-                <div className="mb-2">
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"
-                    alt="image 2"
-                    className="w-full rounded-md"
-                  />
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-2 mt-2">
-                <div className="mb-2">
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
-                    alt="image 3"
-                    className="w-full rounded-md"
-                  />
-                </div>
-                <div className="mb-2">
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
-                    alt="image 4"
-                    className="w-full rounded-md"
-                  />
-                </div>
+                ))}
               </div>
             </div>
           </div>
