@@ -2,20 +2,22 @@ import React from "react";
 import { images } from "data";
 import Card from "components/Card";
 import useProductData from "features/Home/hooks/useProductData";
-import { log } from "console";
 import Slider from "components/Slider";
+import FeaturedProducts from "../FeaturedProducts";
 export const Home = () => {
   const { products, isLoading, isError } = useProductData();
   if (isLoading) {
-    return <p>Loading...</p>;
+    return(
+    <div className="w-[100%] h-screen flex justify-center items-center">
+      <p className="text-2xl ">🌀Loading...</p>
+    </div>)
   }
 
   if (isError) {
     return <p>Error occurred while fetching products.</p>;
   }
 
-console.log("maha " + products)
-
+  console.log("maha " + products);
 
   return (
     <div>
@@ -30,7 +32,7 @@ console.log("maha " + products)
           Exclusive Products
         </p>
       </div>
-      <div className="my-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-16 md:px-24">
+      <div className="mt-6 mb-40 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-16 md:px-48">
         {products.map((product: any) => (
           <Card
             key={product.id}
@@ -38,7 +40,6 @@ console.log("maha " + products)
             title={product.title}
             price={product.price}
             stars={product.rating.rate}
-            offer={product.description}
           />
         ))}
       </div>

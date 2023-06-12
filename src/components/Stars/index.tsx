@@ -1,31 +1,22 @@
-// import React from "react";
-// import { Star } from "lib/@heroicon";
-// export const Stars = ({ selected = false, onSelect }) => {
-//     const starColor = selected ? "text-red-500" : "text-gray-500";
-
-//   const starss = Array(5).fill(0);
-//   return (
-//     <div >
-//     <Star className={`w-4 h-4 ${starColor} cursor-pointer`}  onClick={onSelect} />
-//     </div>
-//   );
-// };
-// 
-import React, { FC } from "react";
+import React from 'react';
 import { Star  } from "lib/@heroicon";
 
-interface StarsProps {
-  selected?: boolean;
+interface StarRatingProps {
+  rating: number;
 }
+const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
+  const stars = [];
 
-const Stars: FC<StarsProps> = ({ selected = false }) => {
-  return (
-    <div className="flex">
-      <Star 
-        className={`w-4 h-4 ${selected ? "text-red-500" : "text-yellow-50"}`}
-      />
-    </div>
-  );
-}
+  for (let i = 1; i <= 5; i++) {
+    const starClasses = i <= rating ? 'text-red-500' : 'text-gray-300';
+    {console.log(rating)}
+    stars.push(
+      <Star key={i} className={`h-5 w-5 ${starClasses}`}/>
+      
+    );
+  }
 
-export default Stars;
+  return <div className="flex items-center">{stars}</div>;
+};
+
+export default StarRating;
