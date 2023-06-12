@@ -12,6 +12,6 @@ module.exports = {
 };
 module.exports = {
   images: {
-    domains: ['fakestoreapi.com'],
+    domains: ['cdn-icons-png.flaticon.com', 'upload.wikimedia.org'],
   },
 };
