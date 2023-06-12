@@ -3,7 +3,6 @@ import { images } from "data";
 import Card from "components/Card";
 import useProductData from "features/Home/hooks/useProductData";
 import Slider from "components/Slider";
-import FeaturedProducts from "../FeaturedProducts";
 export const Home = () => {
   const { products, isLoading, isError } = useProductData();
   if (isLoading) {
