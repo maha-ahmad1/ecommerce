@@ -10,5 +10,4 @@ const useProductData = () => {
     isError: error,
   };
 };
-
 export default useProductData;
