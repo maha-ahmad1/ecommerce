@@ -3,12 +3,18 @@ import { images } from "data";
 import Card from "components/Card";
 import useProductData from "features/Home/hooks/useProductData";
 import Slider from "components/Slider";
-import DefaultTooltip from "components/Tooltip";
+import FeaturedProducts from "../FeaturedProducts";
+import Serves from "../Serves";
+import SliderV2 from "../Slider";
 
 export const Home = () => {
   const { products, isLoading, isError } = useProductData();
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="w-[100%] h-screen flex justify-center items-center">
+        <p className="text-2xl ">🌀Loading...</p>
+      </div>
+    );
   }
 
   if (isError) {
@@ -27,7 +33,8 @@ export const Home = () => {
         scrollbar={false}
         autoplay={false}
       />
-     
+      <Serves />
+
       <div className="justify-center flex mb-10">
         <p className=" pt-20 pb-4 text-3xl font-bold border-b-red-500 border-b-2 ">
           Exclusive Products
@@ -45,6 +52,8 @@ export const Home = () => {
           />
         ))}
       </div>
+      <FeaturedProducts limit={4} />
+      <SliderV2 />
     </div>
   );
 };

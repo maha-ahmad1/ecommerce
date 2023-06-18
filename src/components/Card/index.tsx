@@ -24,7 +24,6 @@ export const card = ({
               className="h-full w-full object-cover object-center sm:h-full sm:w-full"
               width={100}
               height={100}
-              priority={true} 
             />
           </div>
         </div>
