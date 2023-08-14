@@ -20,17 +20,17 @@ const Slider = ({
   onSlideChange,
   ...rest
 }: SliderProps) => {
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
+  // const progressCircle = useRef(null);
+  // const progressContent = useRef(null);
 
-  const onAutoplayTimeLeft = (s: any, time: number, progress: number ) => {
-    if (progressCircle.current) {
-      progressCircle.current.style.setProperty("--progress", 1 - progress);
-    }
-    if (progressContent.current) {
-      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-    }
-  };
+  // const onAutoplayTimeLeft = (s: any, time: number, progress: number ) => {
+  //   if (progressCircle.current) {
+  //     progressCircle.current.style.setProperty("--progress", 1 - progress);
+  //   }
+  //   if (progressContent.current) {
+  //     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  //   }
+  // };
 
   return (
     <>
@@ -49,7 +49,7 @@ const Slider = ({
           delay: 2500,
           disableOnInteraction: false,
         }}
-        onAutoplayTimeLeft={onAutoplayTimeLeft}
+        // onAutoplayTimeLeft={onAutoplayTimeLeft}
       >
         {images.map((image, index) => (
     <SwiperSlide key={index} className="relative h-screen">
