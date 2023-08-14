@@ -2,8 +2,9 @@ import React from "react";
 import { images } from "data";
 import Card from "components/Card";
 import useProductData from "features/Home/hooks/useProductData";
-import { log } from "console";
 import Slider from "components/Slider";
+import DefaultTooltip from "components/Tooltip";
+
 export const Home = () => {
   const { products, isLoading, isError } = useProductData();
   if (isLoading) {
@@ -14,17 +15,19 @@ export const Home = () => {
     return <p>Error occurred while fetching products.</p>;
   }
 
-console.log("maha " + products)
-
+  console.log("maha " + products);
 
   return (
     <div>
+      <div className="h-full w-full">
+      </div>
       <Slider
         images={images}
         navigation={false}
         scrollbar={false}
         autoplay={false}
       />
+     
       <div className="justify-center flex mb-10">
         <p className=" pt-20 pb-4 text-3xl font-bold border-b-red-500 border-b-2 ">
           Exclusive Products

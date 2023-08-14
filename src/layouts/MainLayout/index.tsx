@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Navbar , Footer} from "./components";
+import { Navbar, Footer } from "./components";
 import type { MainLayoutType } from "layouts/types";
 
 export const MainLayout: MainLayoutType = ({
@@ -12,7 +12,7 @@ export const MainLayout: MainLayoutType = ({
   return (
     <div className="min-h-screen flex flex-col">
       <Head>
-        <title>{title}</title>
+        <title>{title}</title>{" "}
         <meta name="description" content={pageDescription} />
         <link rel="icon" href="/assets/image/logo_dark.png" />
       </Head>
@@ -21,11 +21,7 @@ export const MainLayout: MainLayoutType = ({
           <Navbar />
         </header>
       )}
-      <main
-        className={`min-h-fit ${contentClassName}`}
-      >
-        {children}
-      </main>
+      <main className={`min-h-fit ${contentClassName}`}>{children}</main>
       <Footer />
     </div>
   );
