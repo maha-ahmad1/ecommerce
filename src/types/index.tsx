@@ -44,6 +44,6 @@ export type CardType ={
   title:string,
   price:string,
   stars:any,
-  offer:string
+  offer?:string
   
 }
