@@ -11,7 +11,7 @@ const NavLinks = () => {
         <Link href="/" className={`${pathname === '/' ? 'text-red-500 ' : ''}mr-4 hover:text-red-500`}>
           HOME
         </Link>
-        <Link href="/SHOP" className={`${pathname === '/SHOP' ? 'text-red-500 ' : ''}mr-4 hover:text-red-500`}>
+        <Link href="/Shop" className={`${pathname === '/Shop' ? 'text-red-500 ' : ''}mr-4 hover:text-red-500`}>
           SHOP
         </Link>
         <Link href="/PRODUCT" className={`${pathname === '/PRODUCT' ? 'text-red-500 ' : ''}mr-4 hover:text-red-500`}>
