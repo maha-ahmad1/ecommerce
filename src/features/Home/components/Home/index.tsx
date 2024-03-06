@@ -6,17 +6,16 @@ import Slider from "components/Slider";
 import FeaturedProducts from "../FeaturedProducts";
 import Serves from "../Serves";
 import SliderV2 from "../Slider";
-
 export const Home = () => {
   const { products, isLoading, isError } = useProductData();
   if (isLoading) {
     return (
       <div className="w-[100%] h-screen flex justify-center items-center">
         <p className="text-2xl ">🌀Loading...</p>
+
       </div>
     );
   }
-
   if (isError) {
     return <p>Error occurred while fetching products.</p>;
   }
@@ -25,6 +24,7 @@ export const Home = () => {
 
   return (
     <div>
+
       <div className="h-full w-full">
       </div>
       <Slider
@@ -34,7 +34,6 @@ export const Home = () => {
         autoplay={false}
       />
       <Serves />
-
       <div className="justify-center flex mb-10">
         <p className=" pt-20 pb-4 text-3xl font-bold border-b-red-500 border-b-2 ">
           Exclusive Products

@@ -7,7 +7,7 @@ const useProductData = (limit?: number) => {
   const { data, error } = useSWR(url, fetcher);
   return {
     products: data,
-    isLoading: !error && !data,
+    isLoading:  !data,
     isError: error,
   };
 };

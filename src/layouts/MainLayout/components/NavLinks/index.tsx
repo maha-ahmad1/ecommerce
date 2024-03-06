@@ -1,30 +1,31 @@
-// import { Link } from "components";
-// import { URL_PATHS } from "data";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-// const NavLinks = () => {
-//   return (
-//     // <div className="hidden md:block">
-// <div>
-//     <Link
-//         href={URL_PATHS.HOME}
-//         className="px-6 transition-colors hover:text-blue"
-//       >
-//         Home
-//       </Link>
-//       <Link
-//         href={URL_PATHS.INVOICES.INDEX}
-//         className="px-6 transition-colors hover:text-blue"
-//       >
-//         Invoices
-//       </Link>
-//       <Link
-//         href={URL_PATHS.INVOICES.CREATE}
-//         className="px-6 py-1 text-blue border rounded-full border-blue transition-colors hover:bg-blue hover:text-white"
-//       >
-//         Create
-//       </Link>
-//     </div>
-//   );
-// };
+const NavLinks = () => {
+  const router = useRouter();
+  const pathname = router.pathname;
 
-// export default NavLinks;
+  return (
+    <div className="hidden md:block">
+      <div>
+        <Link href="/" className={`${pathname === '/' ? 'text-red-500 ' : ''}mr-4 hover:text-red-500`}>
+          HOME
+        </Link>
+        <Link href="/SHOP" className={`${pathname === '/SHOP' ? 'text-red-500 ' : ''}mr-4 hover:text-red-500`}>
+          SHOP
+        </Link>
+        <Link href="/PRODUCT" className={`${pathname === '/PRODUCT' ? 'text-red-500 ' : ''}mr-4 hover:text-red-500`}>
+          PRODUCT
+        </Link>
+        <Link href="/BLOG" className={`${pathname === '/BLOG' ? 'text-red-500 ' : ''}mr-4 hover:text-red-500`}>
+          BLOG
+        </Link>
+        <Link href="/CONTACTUS" className={`${pathname === '/CONTACTUS' ? 'text-red-500 ' : ''}mr-4 hover:text-red-500`}>
+          CONTACT US
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default NavLinks;

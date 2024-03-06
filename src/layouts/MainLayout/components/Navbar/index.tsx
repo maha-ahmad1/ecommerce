@@ -7,8 +7,8 @@ import {
   HeartIcon,
   Compare,
 } from "lib/@heroicon";
-import { useState } from "react";
-
+import { useState ,useEffect} from "react";
+import NavLinks from "../NavLinks";
 export const Navbar = () => {
   const [selectedValue, setSelectedValue] = useState("English");
   const [option, setOption] = useState("USD");
@@ -19,12 +19,30 @@ export const Navbar = () => {
   const handleSelect = (event: any) => {
     setOption(event.target.value);
   };
-
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollDiv = document.getElementById("scrollDiv");
+  
+      if (scrollDiv) {
+        if (currentScrollY > 0) {
+          scrollDiv.classList.add("hidden");
+        } else {
+          scrollDiv.classList.remove("hidden");
+        }
+      }
+    };
+  
+    window.addEventListener("scroll", handleScroll, { passive: true });
+  
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
   return (
     <div>
-      <header className="top-0 z-10 mt-2 sticky w-full">
+      <header className="top-0 z-10  sticky w-full">
         <nav>
-          <div className="mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-20 my-2">
+        <div id="scrollDiv" className="mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-20 my-2">
             <div className="sm:flex hidden">
               <select
                 value={selectedValue}
@@ -74,7 +92,7 @@ export const Navbar = () => {
           </div>
 
           {/* Secondary navigation */}
-          <div className="border-t-2 border-gray-100 border-b-2 ">
+          <div className="border-t-2 border-gray-100 border-b-2 fixed bg-white  w-full ">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0  ">
               <div>
                 <div className="flex h-16 items-center justify-between ">
@@ -89,7 +107,7 @@ export const Navbar = () => {
                       />
                     </a>
                   </div>
-                  <div className="hidden sm:block ">
+                  {/* <div className="hidden sm:block ">
                     <a href="#" className="mr-4 hover:text-red-500">
                       HOME
                     </a>
@@ -106,7 +124,8 @@ export const Navbar = () => {
                     <a href="#" className="mr-4  hover:text-red-500">
                       CONTACT US
                     </a>
-                  </div>
+                  </div> */}
+                  <NavLinks />
 
                   <div className="flex flex-1 items-center justify-end">
                     <div className="flex items-center lg:ml-8">
