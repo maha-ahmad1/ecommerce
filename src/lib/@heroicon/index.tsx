@@ -7,7 +7,6 @@ import {
   UserIcon as UserIcon,
   HeartIcon as HeartIcon,
   ArrowPathIcon as Compare,
-  ArchiveBoxArrowDownIcon as Arrow,
 } from "@heroicons/react/24/outline";
 import { StarIcon as Star } from "@heroicons/react/24/solid";
 export {
@@ -20,5 +19,4 @@ export {
   HeartIcon,
   Compare,
   Star,
-  Arrow,
 };
