@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useState } from 'react';
 import { CardType } from "types";
 import Stars from "components/Stars";
 import Image from "components/Image";
 import Link from "next/link";
 
-export const card = ({ image, title, price, stars, ...rest }: CardType) => {
+
+export const Card = ({ image, title, price, stars, ...rest }: CardType) => {
+  const [items, setItems] = useState([]);
+  console.log( items )
+
+  // const addItemToCart = () => {
+  //   fetch('https://fakestoreapi.com/carts', {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       userId: 5,
+  //       date: "2020-02-03",
+  //     })
+  //   })
+  //   .then(res => res.json())
+  //   .then(json => {
+  //     setItems([...items, json]); // Assuming the response from the API contains the new item data
+  //   })
+  //   .catch(error => {
+  //     console.error('Error adding item to cart:', error);
+  //   });
+  // };
+
+  const addItemToCart = (newItem) => {
+    setItems([...items, newItem]);
+  };
   return (
     <div className="bg-white" {...rest}>
       <div className="mx-auto max-w-2xl pb-4 sm:px-6 sm:pt-0 lg:max-w-7xl lg:px-0 border border-gray-200 rounded-lg shadow">
@@ -17,7 +41,6 @@ export const card = ({ image, title, price, stars, ...rest }: CardType) => {
                 className="h-full w-auto object-cover object-center"
                 width={500}
                 height={500}
-                priority={true}
               />
             </div>
           </div>
@@ -42,9 +65,11 @@ export const card = ({ image, title, price, stars, ...rest }: CardType) => {
               </span>
             </div>
           </div>
-          <div></div>
           <div className="flex">
             <Stars rating={stars} />
+          </div>
+          <div>
+            <button type="submit" onClick={addItemToCart} className="pt-4">Add To Cart</button>
           </div>
         </div>
       </div>
@@ -52,4 +77,4 @@ export const card = ({ image, title, price, stars, ...rest }: CardType) => {
   );
 };
 
-export default card;
+export default Card;

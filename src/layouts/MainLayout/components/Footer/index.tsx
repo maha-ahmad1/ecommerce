@@ -129,35 +129,35 @@ export const Footer = () => {
               <Image
                 className="mr-2"
                 src="/assets/image/express.png"
-                alt=""
+                alt="express"
                 width={40}
                 height={40}
               />
               <Image
                 className="mr-2"
                 src="/assets/image/discover.png"
-                alt=""
+                alt="discover"
                 width={40}
                 height={40}
               />{" "}
               <Image
                 className="mr-2"
                 src="/assets/image/master_card.png"
-                alt=""
+                alt="master_card"
                 width={40}
                 height={40}
               />{" "}
               <Image
                 className="mr-2"
                 src="/assets/image/paypal.png"
-                alt=""
+                alt="paypal"
                 width={40}
                 height={40}
               />
               <Image
                 className="mr-2"
                 src="/assets/image/visa.png"
-                alt=""
+                alt="visa"
                 width={40}
                 height={40}
               />

@@ -7,15 +7,11 @@ export const Button = ({
   type = "button",
   loading = false,
   ...rest
-}:TypeButton) => {
-    return (
-        <button
-          className={className}
-          type={type}
-          {...rest}
-        >
-          {loading ? "Loading.." : children}
-        </button>
-      );
+}: TypeButton) => {
+  return (
+    <button className={className} type={type} {...rest}>
+      {loading ? "Loading.." : children}
+    </button>
+  );
 };
 export default Button;

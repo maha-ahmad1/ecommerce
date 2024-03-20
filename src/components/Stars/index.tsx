@@ -9,7 +9,6 @@ const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
 
   for (let i = 1; i <= 5; i++) {
     const starClasses = i <= rating ? 'text-red-500' : 'text-gray-300';
-    {console.log(rating)}
     stars.push(
       <Star key={i} className={`h-5 w-5 ${starClasses}`}/>
       

@@ -41,6 +41,8 @@ export const Home = () => {
       </div>
       <div className="my-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-16 md:px-24">
         {products.map((product: any) => (
+          console.log("maha " + product.id),
+
           <Card
             key={product.id}
             image={product.image}

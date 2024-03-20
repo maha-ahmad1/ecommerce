@@ -21,7 +21,6 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
     return <p>Error occurred while fetching products.</p>;
   }
 
-  console.log("maha " + products);
   return (
     <div>
       <div className="flex px-16 md:px-48 mb-24">
