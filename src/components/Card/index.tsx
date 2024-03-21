@@ -1,33 +1,28 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 import { CardType } from "types";
 import Stars from "components/Stars";
 import Image from "components/Image";
 import Link from "next/link";
 
+const data = [
+  { id: 1 ,price:222 ,title:'aaaa'},
+  { id: 2 ,price:222,title:'ddddd'},
+];
 
-export const Card = ({ image, title, price, stars, ...rest }: CardType) => {
-  const [items, setItems] = useState([]);
-  console.log( items )
-
-  // const addItemToCart = () => {
-  //   fetch('https://fakestoreapi.com/carts', {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //       userId: 5,
-  //       date: "2020-02-03",
-  //     })
-  //   })
-  //   .then(res => res.json())
-  //   .then(json => {
-  //     setItems([...items, json]); // Assuming the response from the API contains the new item data
-  //   })
-  //   .catch(error => {
-  //     console.error('Error adding item to cart:', error);
-  //   });
-  // };
-
-  const addItemToCart = (newItem) => {
-    setItems([...items, newItem]);
+export const Card = ({ id='', image, title, price, stars, ...rest }: CardType) => {
+  console.log("id" + id)
+  const [cart, setCart] = useState(data);
+  console.log(cart);
+  const addItem = ({ id, title,price }: any) => {
+    const newItems = [
+      ...cart,
+      {
+        id: id,
+        title:title,
+        price:price
+      },
+    ];
+    setCart(newItems);
   };
   return (
     <div className="bg-white" {...rest}>
@@ -41,6 +36,7 @@ export const Card = ({ image, title, price, stars, ...rest }: CardType) => {
                 className="h-full w-auto object-cover object-center"
                 width={500}
                 height={500}
+                priority={true}
               />
             </div>
           </div>
@@ -69,7 +65,9 @@ export const Card = ({ image, title, price, stars, ...rest }: CardType) => {
             <Stars rating={stars} />
           </div>
           <div>
-            <button type="submit" onClick={addItemToCart} className="pt-4">Add To Cart</button>
+            <button type="submit" onClick={() => addItem({id,title,price})} className="pt-4">
+              Add To Cart
+            </button>
           </div>
         </div>
       </div>

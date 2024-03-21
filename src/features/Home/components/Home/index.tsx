@@ -12,7 +12,6 @@ export const Home = () => {
     return (
       <div className="w-[100%] h-screen flex justify-center items-center">
         <p className="text-2xl ">🌀Loading...</p>
-
       </div>
     );
   }
@@ -24,9 +23,7 @@ export const Home = () => {
 
   return (
     <div>
-
-      <div className="h-full w-full">
-      </div>
+      <div className="h-full w-full"></div>
       <Slider
         images={images}
         navigation={false}
@@ -40,18 +37,21 @@ export const Home = () => {
         </p>
       </div>
       <div className="my-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-16 md:px-24">
-        {products.map((product: any) => (
-          console.log("maha " + product.id),
-
-          <Card
-            key={product.id}
-            image={product.image}
-            title={product.title}
-            price={product.price}
-            stars={product.rating.rate}
-            offer={product.description}
-          />
-        ))}
+        {products.map(
+          (product: any) => (
+            (
+              <Card
+                key={product.id}
+                image={product.image}
+                title={product.title}
+                price={product.price}
+                stars={product.rating.rate}
+                offer={product.description}
+                id={product.id}
+              />
+            )
+          )
+        )}
       </div>
       <FeaturedProducts limit={4} />
       <SliderV2 />
