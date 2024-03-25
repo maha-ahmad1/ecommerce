@@ -6,11 +6,15 @@ import type {
   FC
 } from "react";
 export interface MainLayoutProps extends HTMLProps<HTMLDivElement> {
-  children: Children;
-  title: string;
+  children?: Children;
+  title?: string;
   pageDescription?: string;
   withoutNavbar?: boolean;
   contentClassName?: string;
+  pages?:string;
+  subtitle?:string;
+  pageTitle?:string;
+  withoutBreadCrumb?:boolean;
 }
 export type MainLayoutType = FC<MainLayoutProps>;
 
@@ -22,10 +26,10 @@ export type ChildrenProp = {
   children: ReactNode;
 };
 
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
-  getNestedLayout?: (page: ReactElement) => ReactNode;
-  mainLayoutProps?: Omit<MainLayoutProps, "children">;
-};
+// export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+//   getNestedLayout?: (page: ReactElement) => ReactNode;
+//   mainLayoutProps?: Omit<MainLayoutProps, "children">;
+// };
 
 export type NativeDivProps = JSX.IntrinsicElements["div"];
 export type SpanElementType = HTMLProps<HTMLSpanElement>;

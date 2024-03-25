@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Navbar, Footer } from "./components";
+import { Navbar, Footer, BreadCrumb } from "./components";
 import type { MainLayoutType } from "layouts/types";
 
 export const MainLayout: MainLayoutType = ({
@@ -8,6 +8,10 @@ export const MainLayout: MainLayoutType = ({
   pageDescription = "Stor",
   withoutNavbar = false,
   contentClassName = "",
+  subtitle,
+  pages,
+  pageTitle,
+  withoutBreadCrumb = true,
 }) => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -20,6 +24,9 @@ export const MainLayout: MainLayoutType = ({
         <header>
           <Navbar />
         </header>
+      )}
+      {withoutBreadCrumb && (
+        <BreadCrumb pageTitle={pageTitle} subtitle={subtitle} pages={pages} />
       )}
       <main className={`min-h-fit ${contentClassName}`}>{children}</main>
       <Footer />

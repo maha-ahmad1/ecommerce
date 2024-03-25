@@ -4,26 +4,39 @@ import Stars from "components/Stars";
 import Image from "components/Image";
 import Link from "next/link";
 
-const data = [
-  { id: 1 ,price:222 ,title:'aaaa'},
-  { id: 2 ,price:222,title:'ddddd'},
-];
-
-export const Card = ({ id='', image, title, price, stars, ...rest }: CardType) => {
-  console.log("id" + id)
-  const [cart, setCart] = useState(data);
-  console.log(cart);
-  const addItem = ({ id, title,price }: any) => {
-    const newItems = [
-      ...cart,
-      {
-        id: id,
-        title:title,
-        price:price
-      },
-    ];
-    setCart(newItems);
+export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
+  const [cart, setCart] = useState([]);
+  console.log(cart)
+  const addItem = async ({ id }:any) => {
+    try {
+      const response = await fetch('https://fakestoreapi.com/carts', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          userId: 5,
+          date: '2020-02-03',
+          products: [{ productId: id, quantity: 1 }]
+        })
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to add item to cart');
+      }
+      
+      const data = await response.json();
+      console.log(data)
+       // Log the response from the API for debugging
+      
+      // Update the cart state if necessary
+      // For simplicity, assume the response includes updated cart data
+      setCart(data.products);
+    } catch (error) {
+      console.error('Error adding item to cart:', error);
+    }
   };
+
   return (
     <div className="bg-white" {...rest}>
       <div className="mx-auto max-w-2xl pb-4 sm:px-6 sm:pt-0 lg:max-w-7xl lg:px-0 border border-gray-200 rounded-lg shadow">
@@ -65,7 +78,7 @@ export const Card = ({ id='', image, title, price, stars, ...rest }: CardType) =
             <Stars rating={stars} />
           </div>
           <div>
-            <button type="submit" onClick={() => addItem({id,title,price})} className="pt-4">
+            <button type="submit" onClick={() => addItem({id})} className="pt-4">
               Add To Cart
             </button>
           </div>

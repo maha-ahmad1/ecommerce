@@ -6,7 +6,7 @@ import Slider from "components/Slider";
 import FeaturedProducts from "../FeaturedProducts";
 import Serves from "../Serves";
 import SliderV2 from "../Slider";
-export const Home = () => {
+export const MainPage = () => {
   const { products, isLoading, isError } = useProductData();
   if (isLoading) {
     return (
@@ -19,7 +19,7 @@ export const Home = () => {
     return <p>Error occurred while fetching products.</p>;
   }
 
-  console.log("maha " + products);
+  console.log(products);
 
   return (
     <div>
@@ -58,6 +58,6 @@ export const Home = () => {
     </div>
   );
 };
-export default Home;
+export default MainPage;
 //By passing this data down to the Card
 //by defining props on the child component. The child component can then access the data by using the props passed to it.

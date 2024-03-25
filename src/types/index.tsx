@@ -1,5 +1,21 @@
 import { Swiper } from "swiper";
+import type {
+  ReactElement,
+  ReactNode,
+} from "react";
+import type { NextPage } from "next";
+import type { MainLayoutProps } from "layouts";
 
+export type Children = ReactNode;
+
+export type ChildrenProp = {
+  children: ReactNode;
+};
+
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getNestedLayout?: (page: ReactElement) => ReactNode;
+  mainLayoutProps?: Omit<MainLayoutProps, "children">;
+};
 export interface ImageProps {
   src: string;
   alt: string;

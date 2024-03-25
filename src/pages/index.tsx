@@ -1,11 +1,17 @@
 import React from "react";
-import Home from "features/Home/components/Home";
+import MainPage from "features/Home/components/home";
+import type { NextPageWithLayout } from "types";
 
-export const Page = () => {
+export const Home: NextPageWithLayout  = () => {
   return (
     <div>
-      <Home />
+      <MainPage />
     </div>
   );
 };
 export default Home;
+
+Home.mainLayoutProps = {
+withoutBreadCrumb:false
+};
+  

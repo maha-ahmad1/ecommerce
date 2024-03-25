@@ -20,17 +20,6 @@ const Slider = ({
   onSlideChange,
   ...rest
 }: SliderProps) => {
-  // const progressCircle = useRef(null);
-  // const progressContent = useRef(null);
-
-  // const onAutoplayTimeLeft = (s: any, time: number, progress: number ) => {
-  //   if (progressCircle.current) {
-  //     progressCircle.current.style.setProperty("--progress", 1 - progress);
-  //   }
-  //   if (progressContent.current) {
-  //     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-  //   }
-  // };
 
   return (
     <>
@@ -53,14 +42,14 @@ const Slider = ({
       >
         {images.map((image, index) => (
     <SwiperSlide key={index} className="relative h-screen">
-    <div className="relative">
+    <div className="relative mt-16">
       <Image
         src={image.src}
         alt={image.alt}
-        width={1000}
-        height={1000}
+        width={2000}
+        height={2000}
         priority={true}
-        className="w-full h-screen"
+        className="w-full h-[43rem]"
       />
       <div className="absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 ">
         {image?.heading && <p className="text-1xl font-bold">{image?.heading}</p>}

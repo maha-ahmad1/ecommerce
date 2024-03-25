@@ -9,6 +9,7 @@ import {
 } from "lib/@heroicon";
 import { useState, useEffect } from "react";
 import NavLinks from "../NavLinks";
+import { ActiveLink } from "components";
 export const Navbar = () => {
   const [selectedValue, setSelectedValue] = useState("English");
   const [option, setOption] = useState("USD");
@@ -73,24 +74,27 @@ export const Navbar = () => {
             </div>
 
             <div className="flex items-center mr-4 ">
-              <div className="flex items-center mr-4  ">
+              <ActiveLink
+                href="#"
+                className="flex items-center hover:text-red-500 cursor-pointer"
+              >
                 <Compare className="w-6 h-4" />
-                <a href="#" className="text-sm text-black  hover:text-red-500">
-                  Compare
-                </a>
-              </div>
-              <div className="flex items-center mr-4">
+                <p className="cursor-pointer text-sm">Compare</p>
+              </ActiveLink>
+              <ActiveLink
+                href="#"
+                className="flex items-center hover:text-red-500 cursor-pointer"
+              >
                 <HeartIcon className="w-6 h-4" />
-                <a href="#" className="text-sm text-black hover:text-red-500 ">
-                  Wishlist
-                </a>
-              </div>
-              <div className="flex items-center">
+                <p className="cursor-pointer text-sm">Wishlist</p>
+              </ActiveLink>
+              <ActiveLink
+                href="sign-in"
+                className="flex items-center hover:text-red-500 cursor-pointer"
+              >
                 <UserIcon className="w-6 h-4" />
-                <a href="#" className="text-sm text-black hover:text-red-500 ">
-                  Login
-                </a>
-              </div>
+                <p className="cursor-pointer  text-sm">Login</p>
+              </ActiveLink>
             </div>
           </div>
 
