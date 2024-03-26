@@ -6,7 +6,6 @@ const SignIn: NextPageWithLayout = () => {
   return (
     <div>
       <SignInForm />
-      <div className="m-40">login</div>
     </div>
   );
 };

@@ -8,7 +8,13 @@ import {
   HeartIcon as HeartIcon,
   ArrowPathIcon as Compare,
 } from "@heroicons/react/24/outline";
+
 import { StarIcon as Star } from "@heroicons/react/24/solid";
+
+import {
+  EyeIcon as EyeIconMini,
+  EyeSlashIcon as EyeSlashIconMini,
+} from "@heroicons/react/20/solid";
 export {
   Phoneicon,
   Carticon,
@@ -19,4 +25,6 @@ export {
   HeartIcon,
   Compare,
   Star,
+  EyeSlashIconMini,
+  EyeIconMini,
 };
