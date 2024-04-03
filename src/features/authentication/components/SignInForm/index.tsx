@@ -16,11 +16,32 @@ const SignInForm = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit = ({ event, data }: any) => {
-    event.preventDefault();
-    console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    try {
+      const response = await fetch('https://fakestoreapi.com/auth/login',{
+        method:'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: data.Email,
+          password: data.Password
+        })
+      });
+      
+      if (response.ok) {
+        const json = await response.json();
+        console.log(json);
+        // Handle successful login, e.g., redirect user, set auth token, etc.
+      } else {
+        // Handle error response, e.g., display error message
+        console.error('Login failed:', response.statusText);
+      }
+    } catch (error) {
+      // Handle fetch error
+      console.error('Error during login:', error);
+    }
   };
-  console.log(watch("Password"))
   return (
     <div className="flex flex-col justify-center pt-12 pb-20 sm:px-6 lg:px-8">
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-xl">
@@ -42,12 +63,12 @@ const SignInForm = () => {
             <div>
               <div className="mt-1">
                 <Input
-                  required
-                  autoFocus={true}
-                  id="password"
+                  id="password-input"
+                  type="password"
                   label="Password"
-                  placeholder="Enter your password"
+                  placeholder="Enter Password"
                   inputSize="small"
+                  {...register("Password")}
                 />
                 {errors.Password && <span>This field is required</span>}
               </div>
@@ -86,64 +107,9 @@ const SignInForm = () => {
             </div>
           </form>
           <div className="mt-6">
-            {/* <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300"></div>
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-gray-100 text-gray-500">
-                  Or continue with
-                </span>
-              </div>
-            </div> */}
-
-            {/* <div className="mt-6 grid grid-cols-3 gap-3">
-              <div>
-                <a
-                  href="#"
-                  className="w-full flex items-center justify-center px-8 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-                >
-                  <Image
-                    height={100}
-                    width={100}
-                    className="h-5 w-5"
-                    src="https://www.svgrepo.com/show/512120/facebook-176.svg"
-                    alt="Facebook"
-                  />
-                </a>
-              </div>
-              <div>
-                <a
-                  href="#"
-                  className="w-full flex items-center justify-center px-8 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-                >
-                  <Image
-                    height={100}
-                    width={100}
-                    className="h-5 w-5"
-                    src="https://www.svgrepo.com/show/513008/twitter-154.svg"
-                    alt="Twitter"
-                  />
-                </a>
-              </div>
-              <div>
-                <a
-                  href="#"
-                  className="w-full flex items-center justify-center px-8 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-                >
-                  <Image
-                    height={100}
-                    width={100}
-                    className="h-6 w-6"
-                    src="https://www.svgrepo.com/show/506498/google.svg"
-                    alt="Google"
-                  />
-                </a>
-              </div>
-            </div> */}
             <div className="mt-6 flex justify-center ">
               <h2 className="text-md font-sans text-gray-500 ">
-              {`Don't Have an Account?`} 
+                {`Don't Have an Account?`}
                 <Link href="#" className="hover:text-[#ff324d] text-black">
                   Sign up now
                 </Link>
@@ -156,4 +122,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default SignInForm

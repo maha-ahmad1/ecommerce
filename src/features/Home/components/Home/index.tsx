@@ -6,7 +6,7 @@ import Slider from "components/Slider";
 import FeaturedProducts from "../FeaturedProducts";
 import Serves from "../Serves";
 import SliderV2 from "../Slider";
-export const MainPage = () => {
+export const Home = () => {
   const { products, isLoading, isError } = useProductData();
   if (isLoading) {
     return (
@@ -58,6 +58,6 @@ export const MainPage = () => {
     </div>
   );
 };
-export default MainPage;
+export default Home;
 //By passing this data down to the Card
 //by defining props on the child component. The child component can then access the data by using the props passed to it.
