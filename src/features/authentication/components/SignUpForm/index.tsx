@@ -2,48 +2,58 @@ import React from "react";
 import Link from "next/link";
 import { Input } from "components";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useLogin } from "features/authentication/hooks";
+import { useSignUp } from "features/authentication/hooks";
 import { useContext } from "react";
 import AuthContext from "features/authentication/context/AuthContext";
 type Inputs = {
-  Name: string;
+  Email: string;
   Password: string;
+  Name: string;
 };
 
-const SignInForm = () => {
+const SignUpForm = () => {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm<Inputs>();
-  const { login } = useLogin();
+  const { signup } = useSignUp();
   const authCtx = useContext(AuthContext);
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
-      const response = await login(data.Name, data.Password);
-      // authCtx.login(response.token);
+      const response = await signup(data.Name, data.Email, data.Password);
       console.log(response);
     } catch (error) {
       console.error("Error during login:", error);
     }
   };
 
-  return ( 
+  return (
     <div className="flex flex-col justify-center pt-12 pb-20 sm:px-6 lg:px-8">
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-xl">
         <div className="bg-white py-12 px-4 shadow-2xl sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
-            <p className="text-3xl font-bold mb-8">Login</p>
+            <p className="text-3xl font-bold mb-8">Create An Account</p>
             <div>
               <Input
                 autoFocus={true}
                 id="Name-input"
                 label="Name"
-                placeholder="Enter Email"
+                placeholder="Enter Name"
                 inputSize="small"
                 {...register("Name", { required: true })}
+              />
+            </div>
+            <div>
+              <Input
+                autoFocus={true}
+                id="email-input"
+                label="Email"
+                placeholder="Enter Email"
+                inputSize="small"
+                {...register("Email", { required: true })}
               />
             </div>
 
@@ -72,14 +82,8 @@ const SignInForm = () => {
                   htmlFor="remember_me"
                   className="ml-2 block text-sm text-[#687188]"
                 >
-                  Remember me
+                  I agree to terms & Policy.
                 </label>
-              </div>
-
-              <div className="text-sm">
-                <a href="#" className="font-medium text-[#687188] ">
-                  Forgot your password?
-                </a>
               </div>
             </div>
 
@@ -88,16 +92,19 @@ const SignInForm = () => {
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm  rounded-md text-white bg-[#ff324d] hover:bg-[#ff324de7] focus:outline-none focus:ring-2 focus:ring-offset-2 "
               >
-                Login
+                Register
               </button>
             </div>
           </form>
           <div className="mt-6">
             <div className="mt-6 flex justify-center ">
               <h2 className="text-md font-sans text-gray-500 ">
-                {`Don't Have an Account? `}
-                <Link href="/sign-up" className="hover:text-[#ff324d] text-black">
-                  Sign up now
+                {`Already have an account? `}
+                <Link
+                  href="/sign-in"
+                  className="hover:text-[#ff324d] text-black"
+                >
+                  Log in{" "}
                 </Link>
               </h2>
             </div>
@@ -108,4 +115,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default SignUpForm;
