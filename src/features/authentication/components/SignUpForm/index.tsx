@@ -46,7 +46,7 @@ const SignUpForm = () => {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'eyJhbGciOiJIUzI1NiIsInR', // Replace 'token' with your actual token
+          // 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR', // Replace 'token' with your actual token
         },
         body: JSON.stringify(userData),
       });

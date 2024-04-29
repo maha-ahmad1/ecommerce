@@ -38,7 +38,7 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
   };
 
   return (
-    <div className="bg-white" {...rest}>
+    <div className="bg-white  " {...rest}>
       <div className="mx-auto max-w-2xl pb-4 sm:px-6 sm:pt-0 lg:max-w-7xl lg:px-0 border border-gray-200 rounded-lg shadow">
         <div className="group relative hover:bg-gray-300 hover:rounded-t-md ">
           <div className="min-h-80 w-full overflow-hidden rounded-t-md lg:aspect-none group-hover:opacity-50 lg:h-80">

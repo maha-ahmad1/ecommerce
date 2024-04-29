@@ -28,7 +28,7 @@ export const MainLayout: MainLayoutType = ({
       {withoutBreadCrumb && (
         <BreadCrumb pageTitle={pageTitle} subtitle={subtitle} pages={pages} />
       )}
-      <main className={`  ignore-onOutsideClick   ${contentClassName} `}>{children}</main>
+      <main className={`ignore-onOutsideClick   ${contentClassName} `}>{children}</main>
       <Footer />
     </div>
   );

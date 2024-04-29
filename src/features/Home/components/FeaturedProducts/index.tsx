@@ -23,9 +23,9 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
 
   return (
     <div>
-      <div className="flex px-16 md:px-48 mb-24">
+      <div className="px-72 mb-24 md:flex flex-wrap mt-20">
         {" "}
-        <div className="w-[50%] relative pr-8">
+        <div className="w-[50%]  relative pr-8">
           <Image
             src="/assets/image/furniture_banner1.jpg"
             alt="Featured Products"
