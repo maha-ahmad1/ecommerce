@@ -8,7 +8,7 @@ const NavLinks = () => {
         <ActiveLink href="/Shop">SHOP </ActiveLink>
         <ActiveLink href="/Product">PRODUCT </ActiveLink>
         <ActiveLink href="/Blog">BLOG </ActiveLink>
-        <ActiveLink href="/Contactus">CONTACTUS </ActiveLink>
+        <ActiveLink href="/contact-us">CONTACTUS </ActiveLink>
       </div>
     </div>
   );

@@ -30,7 +30,7 @@ export const Home = () => {
         scrollbar={false}
         autoplay={false}
       />
-      <Serves />
+      {/* <Serves /> */}
       <div className="justify-center flex mb-10">
         <p className=" pt-20 pb-4 text-3xl font-bold border-b-red-500 border-b-2 ">
           Exclusive Products

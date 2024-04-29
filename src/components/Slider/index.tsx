@@ -20,7 +20,6 @@ const Slider = ({
   onSlideChange,
   ...rest
 }: SliderProps) => {
-
   return (
     <>
       <Swiper
@@ -41,24 +40,31 @@ const Slider = ({
         // onAutoplayTimeLeft={onAutoplayTimeLeft}
       >
         {images.map((image, index) => (
-    <SwiperSlide key={index} className="relative h-screen">
-    <div className="relative mt-16">
-      <Image
-        src={image.src}
-        alt={image.alt}
-        width={2000}
-        height={2000}
-        priority={true}
-        className="w-full h-[43rem]"
-      />
-      <div className="absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 ">
-        {image?.heading && <p className="text-1xl font-bold">{image?.heading}</p>}
-        {image?.paragraph && <p className="text-4xl font-bold mt-4 ">{image?.paragraph}</p>}
-        {image?.content && <p className="text-md text-gray-500 w-26 mt-4">{image?.content}</p>}
-      </div>
-    </div>
-  </SwiperSlide>
-  
+          <SwiperSlide key={index} className="relative h-screen">
+            <div className="relative mt-16">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={2000}
+                height={2000}
+                priority={true}
+                className="w-full h-[43rem]"
+              />
+              <div className="absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 ">
+                {image?.heading && (
+                  <p className="text-1xl font-bold">{image?.heading}</p>
+                )}
+                {image?.paragraph && (
+                  <p className="text-4xl font-bold mt-4 ">{image?.paragraph}</p>
+                )}
+                {image?.content && (
+                  <p className="text-md text-gray-500 w-26 mt-4">
+                    {image?.content}
+                  </p>
+                )}
+              </div>
+            </div>
+          </SwiperSlide>
         ))}
       </Swiper>
     </>

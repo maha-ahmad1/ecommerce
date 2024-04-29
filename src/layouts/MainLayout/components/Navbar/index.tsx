@@ -10,6 +10,7 @@ import {
 import { useState, useEffect } from "react";
 import NavLinks from "../NavLinks";
 import { ActiveLink } from "components";
+import Link from "next/link";
 export const Navbar = () => {
   const [selectedValue, setSelectedValue] = useState("English");
   const [option, setOption] = useState("USD");
@@ -104,7 +105,7 @@ export const Navbar = () => {
               <div>
                 <div className="flex h-16 items-center justify-between ">
                   <div className="flex flex-1 items-center">
-                    <a href="#">
+                    <Link href="/">
                       <Image
                         src="/assets/image/logo.png"
                         width={120}
@@ -112,7 +113,7 @@ export const Navbar = () => {
                         height={100}
                         priority={true}
                       />
-                    </a>
+                    </Link>
                   </div>
                   <NavLinks />
                   <div className="flex flex-1 items-center justify-end">

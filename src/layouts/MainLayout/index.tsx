@@ -14,8 +14,8 @@ export const MainLayout: MainLayoutType = ({
   withoutBreadCrumb = true,
 }) => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Head>
+    <div className="flex flex-col ignore-onOutsideClick ">
+    <Head>
         <title>{title}</title>{" "}
         <meta name="description" content={pageDescription} />
         <link rel="icon" href="/assets/image/logo_dark.png" />
@@ -28,7 +28,7 @@ export const MainLayout: MainLayoutType = ({
       {withoutBreadCrumb && (
         <BreadCrumb pageTitle={pageTitle} subtitle={subtitle} pages={pages} />
       )}
-      <main className={`min-h-fit ${contentClassName}`}>{children}</main>
+      <main className={`  ignore-onOutsideClick   ${contentClassName} `}>{children}</main>
       <Footer />
     </div>
   );
