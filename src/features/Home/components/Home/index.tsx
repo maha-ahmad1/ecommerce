@@ -30,13 +30,13 @@ export const Home = () => {
         scrollbar={false}
         autoplay={false}
       />
-      {/* <Serves /> */}
+      <Serves />
       <div className="justify-center flex mb-10">
         <p className=" pt-20 pb-4 text-3xl font-bold border-b-red-500 border-b-2 ">
           Exclusive Products
         </p>
       </div>
-      <div className="my-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-16 md:px-24 2xl:px-64 ">
+      <div className="my-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-16 md:px-4 2xl:px-64 ">
         {products.map(
           (product: any) => (
             (

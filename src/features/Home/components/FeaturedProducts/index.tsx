@@ -65,7 +65,7 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
         </p>
       </div>
 
-      <div className="mt-6 mb-40 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-16 md:px-48">
+      <div className="my-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-16 md:px-4 2xl:px-64 ">
         {products.map((product: any) => (
           <Card
             key={product.id}
