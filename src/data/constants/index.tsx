@@ -4,9 +4,9 @@ export const images: ImageProps[] = [
   {
     src: "/assets/image/1.jpg",
     alt: "slider",
-    heading: "Get up to 50% off Today only!",
-    paragraph: "Wooden Chair Collection",
-    content:"is a global fashion and lifestyle e-retailer committed to making the beauty of fashion accessible to all.",
+    heading: "Taking your Viewing Experience to Next Level",
+    paragraph: "Living Room Collection",
+    content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim.",
 
   },
   {
@@ -20,8 +20,8 @@ export const images: ImageProps[] = [
   {
     src: "/assets/image/3.jpg",
     alt: "slider",
-    heading: "Get up to 50% off Today only!",
-    paragraph: "Wooden Chair Collection",
+    heading: "New Trending",
+    paragraph: "Sofa Collection",
     content:"is a global fashion and lifestyle e-retailer committed to making the beauty of fashion accessible to all.",
 
 

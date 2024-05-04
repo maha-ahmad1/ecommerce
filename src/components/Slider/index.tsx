@@ -48,20 +48,21 @@ const Slider = ({
                 width={2000}
                 height={2000}
                 priority={true}
-                className="w-full h-[43rem]"
+                className="w-auto md:h-[43rem] h-[30rem]"
               />
-              <div className="absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 ">
+              <div className="absolute top-1/2 left-[40%] xl:left-1/3 transform -translate-x-1/2 -translate-y-1/2 ">
                 {image?.heading && (
-                  <p className="text-1xl font-bold">{image?.heading}</p>
+                  <p className="md:text-2xl text-lg my-6 font-medium">{image?.heading}</p>
                 )}
                 {image?.paragraph && (
-                  <p className="text-4xl font-bold mt-4 ">{image?.paragraph}</p>
+                  <p className="md:text-6xl text-2xl font-bold mt-4 ">{image?.paragraph}</p>
                 )}
                 {image?.content && (
-                  <p className="text-md text-gray-500 w-26 mt-4">
+                  <p className="md:text-lg text-md text-gray-500 w-26 mt-8">
                     {image?.content}
                   </p>
                 )}
+                <button type="submit" className=" border border-black hover:bg-black hover:text-white font-bold py-2 px-4 rounded-full mt-8 ">SHOP NOW</button>
               </div>
             </div>
           </SwiperSlide>
