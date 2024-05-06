@@ -9,7 +9,7 @@ import { IMAGES } from "data";
 
 export default function SliderV2() {
   const breakpoints = {
-    452: {
+    300: {
       slidesPerView: 2,
     },
     500: {
