@@ -36,7 +36,7 @@ export const Home = () => {
           Exclusive Products
         </p>
       </div>
-      <div className="my-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-16 md:px-4 2xl:px-64 ">
+      <div className="my-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-16 2xl:px-64 ">
         {products.map(
           (product: any) => (
             (

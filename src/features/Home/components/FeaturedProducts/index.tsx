@@ -58,7 +58,7 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
           </div>
         </div>
       </div> */}
-      <div className="bg-white dark:bg-gray-800 py-6 sm:py-8 lg:py-12 px-16 md:px-4 2xl:px-64">
+      <div className="bg-white dark:bg-gray-800 py-6 sm:py-8 lg:py-12 px-16  2xl:px-64">
         <div className="mx-auto max-w-screen-2xl ">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 xl:gap-8">
             <div className="group relative flex items-end overflow-hidden rounded-lg md:col-span-1 h-[26rem]">
@@ -105,7 +105,7 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
         </p>
       </div>
 
-      <div className="my-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-16 md:px-4 2xl:px-64 ">
+      <div className="my-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 px-16 2xl:px-64 ">
         {products.map((product: any) => (
           <Card
             key={product.id}
