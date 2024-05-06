@@ -36,3 +36,19 @@ export const MATERIAL_INPUT_CLASSES = {
     "block text-gray-500 absolute text-sm bg-white duration-100 transform -translate-y-4 scale-75 top-2 origin-[0]  peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4  !cursor-text peer-focus:!cursor-default left-2",
 };
 
+
+export const IMAGES = [
+  "/assets/image/cl_logo1.png",
+  "/assets/image/cl_logo2.png",
+  "/assets/image/cl_logo3.png",
+  "/assets/image/cl_logo4.png",
+  "/assets/image/cl_logo5.png",
+  "/assets/image/cl_logo6.png",
+  "/assets/image/cl_logo7.png",
+  "/assets/image/cl_logo5.png",
+  "/assets/image/cl_logo6.png",
+  "/assets/image/cl_logo7.png",
+  "/assets/image/cl_logo1.png",
+  "/assets/image/cl_logo2.png",
+  "/assets/image/cl_logo3.png",
+];

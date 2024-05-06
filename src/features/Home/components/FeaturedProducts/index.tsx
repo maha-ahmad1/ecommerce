@@ -23,7 +23,7 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
 
   return (
     <div>
-      <div className="px-72 mb-24 md:flex flex-wrap mt-20">
+      {/* <div className="px-72 mb-24 md:flex flex-wrap mt-20">
         {" "}
         <div className="w-[50%]  relative pr-8">
           <Image
@@ -55,6 +55,46 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
             <Link href="#" className="text-lg text-black underline ">
               Shop Now
             </Link>
+          </div>
+        </div>
+      </div> */}
+      <div className="bg-white dark:bg-gray-800 py-6 sm:py-8 lg:py-12 px-16 md:px-4 2xl:px-64">
+        <div className="mx-auto max-w-screen-2xl ">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+            <div className="group relative flex items-end overflow-hidden rounded-lg md:col-span-1 md:h-[26rem]">
+              <Image
+                src="/assets/image/furniture_banner1.jpg"
+                alt="Featured Products"
+                className="absolute  h-full w-full  transition duration-200 group-hover:scale-110"
+                width={9000}
+                height={9000}
+              />
+              <div className="pointer-events-none absolute  via-transparent to-transparent opacity-50"></div>
+              <div className="absolute top-[18%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 text-start ">
+                <h5 className="text-xl font-medium text-black">Super Sale</h5>
+                <p className="text-2xl font-bold text-black">New Collection</p>
+                <Link href="#" className="text-lg text-black underline ">
+                  Shop Now
+                </Link>
+              </div>
+            </div>
+            <div className="group relative flex  items-end overflow-hidden rounded-lg  md:col-span-2 md:h-[26rem]">
+              <Image
+                src="/assets/image/furniture_banner2.jpg"
+                alt="Featured Products"
+                className="absolute  h-full w-full  transition duration-200 group-hover:scale-110"
+                width={9000}
+                height={9000}
+              />
+              <div className="pointer-events-none absolute inset-0  via-transparent to-transparent opacity-50"></div>
+              <div className="absolute top-1/2 left-[15%] transform -translate-x-1/2 -translate-y-1/2 text-start ">
+                <h5 className="text-2xl font-bold text-black">New Season</h5>
+                <p className="text-xl font-medium  text-black">Sale 40% Off</p>
+                <Link href="#" className="text-lg text-black underline ">
+                  Shop Now
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

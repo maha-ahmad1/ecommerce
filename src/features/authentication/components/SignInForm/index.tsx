@@ -33,7 +33,7 @@ const SignInForm = () => {
   return ( 
     <div className="flex flex-col justify-center pt-12 pb-20 sm:px-6 lg:px-8">
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-xl">
-        <div className="bg-white py-12 px-4 shadow-2xl sm:rounded-lg sm:px-10">
+        <div className="bg-white py-12 px-4 sm:shadow-2xl shadow-none sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
             <p className="text-3xl font-bold mb-8">Login</p>
             <div>
