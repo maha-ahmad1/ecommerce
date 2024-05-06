@@ -70,7 +70,7 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
                 height={9000}
               />
               <div className="pointer-events-none absolute  via-transparent to-transparent opacity-50"></div>
-              <div className="absolute top-[18%] left-[35g%] transform -translate-x-1/2 -translate-y-1/2 text-start ">
+              <div className="absolute top-[18%] left-[35%] transform -translate-x-1/2 -translate-y-1/2 text-start ">
                 <h5 className="text-xl font-medium text-black">Super Sale</h5>
                 <p className="text-2xl font-bold text-black">New Collection</p>
                 <Link href="#" className="text-lg text-black underline ">
