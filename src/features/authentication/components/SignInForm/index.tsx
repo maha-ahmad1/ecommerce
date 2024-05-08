@@ -5,32 +5,55 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { useLogin } from "features/authentication/hooks";
 import { useContext } from "react";
 import AuthContext from "features/authentication/context/AuthContext";
+import { useRouter } from "next/router";
+
 type Inputs = {
-  Name: string;
-  Password: string;
+  email: string;
+  password: string;
 };
 
 const SignInForm = () => {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<Inputs>();
   const { login } = useLogin();
   const authCtx = useContext(AuthContext);
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
+
     try {
-      const response = await login(data.Name, data.Password);
-      // authCtx.login(response.token);
-      console.log(response);
+      const UserData = {
+        email: "john@gmail.com",
+        password:'m38rmF$',
+      };
+
+      const response = await fetch("https://fakeapidata.com/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(UserData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to login");
+      }else{
+        router.push("/");
+      }
+   
+      const responseData = await response.json();
+      // authCtx.login(responseData.token);
+      console.log(responseData);
     } catch (error) {
       console.error("Error during login:", error);
     }
   };
 
-  return ( 
+  return (
     <div className="flex flex-col justify-center pt-12 pb-20 sm:px-6 lg:px-8">
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-xl">
         <div className="bg-white py-12 px-4 sm:shadow-2xl shadow-none sm:rounded-lg sm:px-10">
@@ -39,11 +62,11 @@ const SignInForm = () => {
             <div>
               <Input
                 autoFocus={true}
-                id="Name-input"
-                label="Name"
+                id="Email-input"
+                label="Email"
                 placeholder="Enter Email"
                 inputSize="small"
-                {...register("Name", { required: true })}
+                {...register("email", { required: true })}
               />
             </div>
 
@@ -55,7 +78,7 @@ const SignInForm = () => {
                   label="Password"
                   placeholder="Enter Password"
                   inputSize="small"
-                  {...register("Password")}
+                  {...register("password", { required: true })}
                 />
               </div>
             </div>
@@ -96,7 +119,10 @@ const SignInForm = () => {
             <div className="mt-6 flex justify-center ">
               <h2 className="text-md font-sans text-gray-500 ">
                 {`Don't Have an Account? `}
-                <Link href="/sign-up" className="hover:text-[#ff324d] text-black">
+                <Link
+                  href="/sign-up"
+                  className="hover:text-[#ff324d] text-black"
+                >
                   Sign up now
                 </Link>
               </h2>

@@ -1,6 +1,9 @@
 import useSWR, { SWRResponse } from "swr";
+import { useRouter } from "next/router";
 
 export const useSignUp = () => {
+  const router = useRouter();
+
   const signup = async (
     email: string,
     password: string,
@@ -20,6 +23,9 @@ export const useSignUp = () => {
 
     if (!response.ok) {
       throw new Error("sign up failed");
+    }else{
+      router.push("/");
+
     }
     console.log(response);
     return response.json();
