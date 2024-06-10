@@ -7,7 +7,7 @@ import FeaturedProducts from "../FeaturedProducts";
 import Serves from "../Serves";
 import SliderV2 from "../Slider";
 export const Home = () => {
-  const { products, isLoading, isError } = useProductData();
+  const { products, isLoading, isError } = useProductData(8);
   if (isLoading) {
     return (
       <div className="w-[100%] h-screen flex justify-center items-center">

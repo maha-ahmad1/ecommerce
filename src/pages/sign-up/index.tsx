@@ -11,9 +11,9 @@ const SignUp: NextPageWithLayout = () => {
 };
 
 SignUp.mainLayoutProps = {
-  subtitle: 'Sign Up',
+  subtitle: 'Register',
   pages: 'Home',
-  pageTitle: "Sign Up",
+  pageTitle: "Register",
 };
   
 export default SignUp;
