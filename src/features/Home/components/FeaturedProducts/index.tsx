@@ -23,42 +23,8 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
   }
   return (
     <div>
-      {/* <div className="px-72 mb-24 md:flex flex-wrap mt-20">
-        {" "}
-        <div className="w-[50%]  relative pr-8">
-          <Image
-            src="/assets/image/furniture_banner1.jpg"
-            alt="Featured Products"
-            className="w-full h-auto"
-            width={500}
-            height={500}
-          />
-          <div className="absolute top-[15%] left-[15%] transform -translate-x-1/2 -translate-y-1/2 text-start ">
-            <h5 className="text-xl font-medium text-black">Super Sale</h5>
-            <p className="text-2xl font-bold text-black">New Collection</p>
-            <Link href="#" className="text-lg text-black underline">
-              Shop Now
-            </Link>
-          </div>
-        </div>{" "}
-        <div className="w-[50%] relative">
-          <Image
-            src="/assets/image/furniture_banner2.jpg"
-            alt="Featured Products"
-            className="w-full h-[100%]"
-            width={500}
-            height={500}
-          />
-          <div className="absolute top-1/2 left-[15%] transform -translate-x-1/2 -translate-y-1/2 text-start ">
-            <h5 className="text-2xl font-bold text-black">New Season</h5>
-            <p className="text-xl font-medium  text-black">Sale 40% Off</p>
-            <Link href="#" className="text-lg text-black underline ">
-              Shop Now
-            </Link>
-          </div>
-        </div>
-      </div> */}
-      <div className="bg-white dark:bg-gray-800 py-6 sm:py-8 lg:py-12 px-16  2xl:px-64">
+   
+      <div className="bg-white py-6 sm:py-8 lg:py-12 px-16  2xl:px-64">
         <div className="mx-auto max-w-screen-2xl ">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 xl:gap-8">
             <div className="group relative flex items-end overflow-hidden rounded-lg md:col-span-1 h-[26rem]">
@@ -99,7 +65,7 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
         </div>
       </div>
 
-      <div className="justify-center flex mb-10">
+      <div className="justify-center flex mb-10 mt-16">
         <p className="pb-4 text-3xl font-bold border-b-red-500 border-b-2 ">
           Featured Products
         </p>
