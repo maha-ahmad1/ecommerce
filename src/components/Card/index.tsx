@@ -41,15 +41,15 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
 
   return (
     <div
-      className={`bg-white border border-gray-200 rounded-lg shadow cursor-pointer `}
+      className={`group bg-white border border-gray-200 rounded-lg shadow cursor-pointer image-backdrop transition-all duration-500 ease-in-out `}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       {...rest}
     >
       {" "}
-      <div className={`mx-auto max-w-2xl pb-4 sm:px-6 sm:pt-0 lg:max-w-7xl lg:px-0 border border-gray-200 rounded-lg shadow`}>
-        <div className="group relative hover:bg-gray-300 hover:rounded-t-md ">
-          <div className="min-h-80 w-full overflow-hidden rounded-t-md lg:aspect-none group-hover:opacity-50 lg:h-80">
+      <div className={`mx-auto max-w-2xl pb-4 sm:px-6 sm:pt-0 lg:max-w-7xl lg:px-0 border border-gray-200 rounded-lg shadow aspect-square`}>
+        <div className={`group relative  hover:rounded-t-md group-hover:bg-gray-300`}>
+          <div className="min-h-80 w-full overflow-hidden rounded-t-md lg:aspect-none  group-hover:opacity-50 lg:h-80">
             <div className="flex justify-center items-center h-80 bg-white">
               <Image
                 src={image}
@@ -80,7 +80,7 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
                 </div>
                 <div>
                   <span className="text-gray-400 font-medium text-sm line-through">
-                    {price}
+                    {price + 2.3}
                   </span>
                 </div>
               </div>
