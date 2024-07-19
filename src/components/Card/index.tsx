@@ -8,7 +8,6 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
   const [cart, setCart] = useState([]);
   const [isHovered, setIsHovered] = useState(false);
 
-  console.log(cart);
   const addItem = async ({ id }: any) => {
     try {
       const response = await fetch("https://fakestoreapi.com/carts", {
@@ -29,10 +28,7 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
 
       const data = await response.json();
       console.log(data);
-      // Log the response from the API for debugging
 
-      // Update the cart state if necessary
-      // For simplicity, assume the response includes updated cart data
       setCart(data.products);
     } catch (error) {
       console.error("Error adding item to cart:", error);
@@ -41,15 +37,14 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
 
   return (
     <div
-      className={`group bg-white border border-gray-200 rounded-lg shadow cursor-pointer image-backdrop transition-all duration-500 ease-in-out `}
+      className={`group bg-white border border-gray-200 rounded-lg shadow cursor-pointer  transition-all duration-500 `}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       {...rest}
     >
-      {" "}
-      <div className={`mx-auto max-w-2xl pb-4 sm:px-6 sm:pt-0 lg:max-w-7xl lg:px-0 border border-gray-200 rounded-lg shadow aspect-square`}>
-        <div className={`group relative  hover:rounded-t-md group-hover:bg-gray-300`}>
-          <div className="min-h-80 w-full overflow-hidden rounded-t-md lg:aspect-none  group-hover:opacity-50 lg:h-80">
+      <div className={`mx-auto max-w-2xl pb-4 sm:px-6 sm:pt-0 lg:max-w-7xl lg:px-0 `}>
+        <div className={`group relative hover:rounded-t-md group-hover:bg-gray-300`}>
+          <div className="min-h-80 w-full overflow-hidden rounded-t-md lg:aspect-none group-hover:opacity-50 lg:h-80">
             <div className="flex justify-center items-center h-80 bg-white">
               <Image
                 src={image}
@@ -61,10 +56,35 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
               />
             </div>
           </div>
+          {isHovered && (
+            <div className="absolute inset-0 flex flex-row justify-center items-center ">
+              <button
+                type="submit"
+                onClick={() => addItem({ id })}
+                className="bg-red-500 text-white px-2 py-2 rounded-full"
+              >
+                A
+              </button>
+              <button
+                type="submit"
+                onClick={() => addItem({ id })}
+                className="bg-red-500 text-white px-2 py-2 rounded-full"
+              >
+                A
+              </button>
+              <button
+                type="submit"
+                onClick={() => addItem({ id })}
+                className="bg-red-500 text-white px-2 py-2 rounded-full"
+              >
+                A
+              </button>
+            </div>
+          )}
         </div>
         <div className="mt-2 flex flex-col items-center">
           <div>
-            <h3 className="text-md font-medium text-gray-900 ">
+            <h3 className="text-md font-medium text-gray-900">
               <Link href="#">
                 <p className="truncate w-40 hover:text-red-500 cursor-pointer">{title}</p>
               </Link>
@@ -72,11 +92,9 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
           </div>
           {!isHovered && (
             <div>
-              <div className="flex py-2 ">
+              <div className="flex py-2">
                 <div>
-                  <span className="text-md font-bold text-red-400 px-2 ">
-                    {price}
-                  </span>
+                  <span className="text-md font-bold text-red-400 px-2">{price}</span>
                 </div>
                 <div>
                   <span className="text-gray-400 font-medium text-sm line-through">
@@ -90,11 +108,11 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
             </div>
           )}
           {isHovered && (
-            <div className="pt-5 ">
+            <div className="pt-4">
               <button
                 type="submit"
                 onClick={() => addItem({ id })}
-                className="bg-red-500 text-white px-10 py-2 rounded-full"
+                className="bg-red-500 text-white px-10 py-2 border-red-500 border rounded-full hover:bg-white hover:text-red-500"
               >
                 Add To Cart
               </button>
