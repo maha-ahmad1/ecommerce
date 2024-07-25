@@ -3,6 +3,7 @@ import { CardType } from "types";
 import Stars from "components/Stars";
 import Image from "components/Image";
 import Link from "next/link";
+import { Arrow, Searchicon, HeartIcon } from "lib/@heroicon";
 
 export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
   const [cart, setCart] = useState([]);
@@ -42,8 +43,12 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
       onMouseLeave={() => setIsHovered(false)}
       {...rest}
     >
-      <div className={`mx-auto max-w-2xl pb-4 sm:px-6 sm:pt-0 lg:max-w-7xl lg:px-0 `}>
-        <div className={`group relative hover:rounded-t-md group-hover:bg-gray-300`}>
+      <div
+        className={`mx-auto max-w-2xl pb-4 sm:px-6 sm:pt-0 lg:max-w-7xl lg:px-0 `}
+      >
+        <div
+          className={`group relative hover:rounded-t-md group-hover:bg-gray-300`}
+        >
           <div className="min-h-80 w-full overflow-hidden rounded-t-md lg:aspect-none group-hover:opacity-50 lg:h-80">
             <div className="flex justify-center items-center h-80 bg-white">
               <Image
@@ -61,23 +66,23 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
               <button
                 type="submit"
                 onClick={() => addItem({ id })}
-                className="bg-red-500 text-white px-2 py-2 rounded-full"
+                className="bg-white text-black px-2 py-2 mx-1 border rounded-full hover:bg-red-500 hover:text-white  hover:border-red-500"
               >
-                A
+                <Arrow className="h-5 w-5" />
               </button>
               <button
                 type="submit"
                 onClick={() => addItem({ id })}
-                className="bg-red-500 text-white px-2 py-2 rounded-full"
+                className="bg-white text-black px-2 py-2 mx-1 border rounded-full hover:bg-red-500 hover:text-white  hover:border-red-500"
               >
-                A
+                <Searchicon className="h-5 w-5" />
               </button>
               <button
                 type="submit"
                 onClick={() => addItem({ id })}
-                className="bg-red-500 text-white px-2 py-2 rounded-full"
+                className="bg-white text-black px-2 py-2 mx-1 border rounded-full hover:bg-red-500 hover:text-white hover:border-red-500"
               >
-                A
+                <HeartIcon className="h-5 w-5" />
               </button>
             </div>
           )}
@@ -86,7 +91,9 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
           <div>
             <h3 className="text-md font-medium text-gray-900">
               <Link href="#">
-                <p className="truncate w-40 hover:text-red-500 cursor-pointer">{title}</p>
+                <p className="truncate w-40 hover:text-red-500 cursor-pointer">
+                  {title}
+                </p>
               </Link>
             </h3>
           </div>
@@ -94,7 +101,9 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
             <div>
               <div className="flex py-2">
                 <div>
-                  <span className="text-md font-bold text-red-400 px-2">{price}</span>
+                  <span className="text-md font-bold text-red-400 px-2">
+                    {price}
+                  </span>
                 </div>
                 <div>
                   <span className="text-gray-400 font-medium text-sm line-through">
@@ -108,7 +117,7 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
             </div>
           )}
           {isHovered && (
-            <div className="pt-4">
+            <div className=" sm:pt-4">
               <button
                 type="submit"
                 onClick={() => addItem({ id })}
