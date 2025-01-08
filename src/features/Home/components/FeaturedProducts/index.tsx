@@ -22,8 +22,7 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
     return <p>Error occurred while fetching products.</p>;
   }
   return (
-    <div>
-   
+    <>
       <div className="bg-white py-6 sm:py-8 lg:py-12 px-16  2xl:px-64">
         <div className="mx-auto max-w-screen-2xl ">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 xl:gap-8">
@@ -82,7 +81,7 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
           />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 export default FeaturedProducts;

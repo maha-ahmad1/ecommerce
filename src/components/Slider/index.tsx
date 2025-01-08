@@ -48,7 +48,7 @@ const Slider = ({
                 width={2000}
                 height={2000}
                 priority={true}
-                className="w-auto md:h-[43rem] h-[30rem]"
+                className="w-auto md:h-[43rem] h-[30rem]  bg-cover bg-clip-border "
               />
               <div className="absolute top-1/2 left-[40%] xl:left-1/3 transform -translate-x-1/2 -translate-y-1/2 ">
                 {image?.heading && (

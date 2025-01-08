@@ -23,7 +23,6 @@ export const Home = () => {
 
   return (
     <div>
-      <div className="h-full w-full"></div>
       <Slider
         images={images}
         navigation={false}

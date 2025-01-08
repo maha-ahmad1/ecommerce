@@ -8,7 +8,7 @@ import AuthContext from "features/authentication/context/AuthContext";
 import { useRouter } from "next/router";
 
 type Inputs = {
-  email: string;
+  username: string;
   password: string;
 };
 
@@ -24,11 +24,10 @@ const SignInForm = () => {
   const authCtx = useContext(AuthContext);
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-
     try {
       const UserData = {
-        email: "john@gmail.com",
-        password:'m38rmF$',
+        username: data.username,
+        password: data.password,
       };
 
       const response = await fetch("https://fakeapidata.com/auth/login", {
@@ -62,11 +61,11 @@ const SignInForm = () => {
             <div>
               <Input
                 autoFocus={true}
-                id="Email-input"
-                label="Email"
-                placeholder="Enter Email"
+                id="username-input"
+                label="username"
+                placeholder="Enter username"
                 inputSize="small"
-                {...register("email", { required: true })}
+                {...register("username", { required: true })}
               />
             </div>
 

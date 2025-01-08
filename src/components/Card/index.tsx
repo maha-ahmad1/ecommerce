@@ -68,28 +68,28 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
                 onClick={() => addItem({ id })}
                 className="bg-white text-black px-2 py-2 mx-1 border rounded-full hover:bg-red-500 hover:text-white  hover:border-red-500"
               >
-                <Arrow className="h-5 w-5" />
+                <Arrow className="h-6 w-6" />
               </button>
               <button
                 type="submit"
                 onClick={() => addItem({ id })}
                 className="bg-white text-black px-2 py-2 mx-1 border rounded-full hover:bg-red-500 hover:text-white  hover:border-red-500"
               >
-                <Searchicon className="h-5 w-5" />
+                <Searchicon className="h-6 w-6" />
               </button>
               <button
                 type="submit"
                 onClick={() => addItem({ id })}
                 className="bg-white text-black px-2 py-2 mx-1 border rounded-full hover:bg-red-500 hover:text-white hover:border-red-500"
               >
-                <HeartIcon className="h-5 w-5" />
+                <HeartIcon className="h-6 w-6" />
               </button>
             </div>
           )}
         </div>
         <div className="mt-2 flex flex-col items-center">
           <div>
-            <h3 className="text-md font-medium text-gray-900">
+            <h3 className="text-md font-medium text-gray-900 ">
               <Link href="#">
                 <p className="truncate w-40 hover:text-red-500 cursor-pointer">
                   {title}
@@ -117,11 +117,11 @@ export const Card = ({ id, image, title, price, stars, ...rest }: CardType) => {
             </div>
           )}
           {isHovered && (
-            <div className=" sm:pt-4">
+            <div className=" pt-[18px] ">
               <button
                 type="submit"
                 onClick={() => addItem({ id })}
-                className="bg-red-500 text-white px-10 py-2 border-red-500 border rounded-full hover:bg-white hover:text-red-500"
+                className="bg-red-500 text-white px-10 py-2 border-red-500 border rounded-full hover:bg-white hover:text-red-500  "
               >
                 Add To Cart
               </button>

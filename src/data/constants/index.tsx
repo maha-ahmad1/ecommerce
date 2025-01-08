@@ -45,10 +45,4 @@ export const IMAGES = [
   "/assets/image/cl_logo5.png",
   "/assets/image/cl_logo6.png",
   "/assets/image/cl_logo7.png",
-  "/assets/image/cl_logo5.png",
-  "/assets/image/cl_logo6.png",
-  "/assets/image/cl_logo7.png",
-  "/assets/image/cl_logo1.png",
-  "/assets/image/cl_logo2.png",
-  "/assets/image/cl_logo3.png",
 ];
